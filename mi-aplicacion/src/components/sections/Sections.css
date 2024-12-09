@@ -1,0 +1,76 @@
+/*Intro Section*/
+.intro-section {
+    background-image: url('https://images.pexels.com/photos/5807924/pexels-photo-5807924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+}
+
+/*More About Us Section*/
+.more-about-us-section {
+    height: 100vh;
+    display: flex;
+    background-color: white;
+}
+
+#first-div {
+    width: 50%;
+    height: 100%;
+    padding: 0;
+}
+
+#second-div {
+    width: 50%;
+    height: 100%;
+}
+
+#second-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#third-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 50%;
+    background-color: rgb(104, 147, 104);
+    padding: 20px 50px;
+    gap: 50px;
+}
+
+#third-div p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#third-div button {
+    background-color: transparent;
+    box-sizing: content-box;
+    width: 50%;
+    text-align: left;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+/*Carrusel BQ*/
+.carousel-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel-container {
+    overflow: hidden;
+    height: 80%;
+    display: flex;
+}
+
+.carousel-section button {
+    justify-self: end;
+}
