@@ -1,3 +1,4 @@
+import "./Intro.css";
 function Intro({ title, content, imageUrl }) {
     return (
         <div

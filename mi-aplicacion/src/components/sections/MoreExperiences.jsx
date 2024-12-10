@@ -41,7 +41,7 @@ function MoreExperiences() {
             <div className="button-container">
                 <Button
                     onClick={() => {}}
-                    text={"Know more about our experiences"}
+                    children={"Know more about our experiences"}
                 ></Button>
             </div>
         </div>
