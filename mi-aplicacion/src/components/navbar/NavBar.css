@@ -16,10 +16,10 @@
 
 .navbar nav {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
-    gap: 20px;
 }
 
 .navbar nav img {
@@ -32,7 +32,6 @@
     padding: 0;
     margin: 0;
     justify-content: space-between;
-    justify-self: start;
     align-items: center;
 }
 
@@ -43,6 +42,7 @@
 
 .navbar ul li a {
     color: black;
+    font-size: 0.8rem;
     font-weight: bold;
 
 }
@@ -56,7 +56,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 40px;
+    top: 70px;
     left: 50%;
     transform: translate(-50%, 0);
     background-color: black;
@@ -71,4 +71,21 @@
 #experiences-box p {
     color: white;
     margin: 0;
+}
+
+.left-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+}
+
+.right-bar {
+    display: flex;
+}
+
+.right-bar ul {
+    display: flex;
+    gap: 20px;
 }
