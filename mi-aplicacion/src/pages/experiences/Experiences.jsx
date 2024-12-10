@@ -1,6 +1,7 @@
 import ExperiencesPacks from './ExperiencesPacks'
 import Details from './Details'
 import NavBar from '../../components/navbar/NavBar'
+import Intro from '../../components/sections/Intro'
 import './Experiences.css';
 
 
@@ -10,9 +11,11 @@ function Experiences() {
             <header>
                 <NavBar></NavBar>
             </header>
-            <section>
-
-            </section>
+            <Intro
+                title={"Experiences"}
+                content={""}
+                imageUrl={"https://i.ibb.co/HzQLK2V/pruebafondo.png"}>
+            </Intro>
             <main>
                 <ExperiencesPacks></ExperiencesPacks>
                 <Details></Details>

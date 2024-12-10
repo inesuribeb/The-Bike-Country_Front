@@ -38,7 +38,8 @@
 }
 
 .experience-card__button {
-    background-color: #F4A460;
+    /* background-color: #F4A460; */
+    background-color: #FED920;
     border: none;
     border-radius: 25px;
     padding: 10px 30px;
