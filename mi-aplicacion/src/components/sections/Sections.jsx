@@ -1,4 +1,3 @@
-import "./sections.css";
 import Intro from "./Intro";
 import MoreAboutUs from "./MoreAboutUs";
 import CarruselBQ from "./CarruselBQ";
