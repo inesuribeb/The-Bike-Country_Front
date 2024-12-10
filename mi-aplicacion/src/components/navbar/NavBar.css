@@ -6,15 +6,17 @@
     z-index: 100;
     width: 100%;
     transition: none;
+    background-color: rgb(255, 255, 255);
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
+    outline: 2px solid white;
+    backdrop-filter: blur(5px);
 }
 
 .navbar nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     height: 100%;
     gap: 20px;
@@ -26,15 +28,47 @@
 
 .navbar ul {
     display: flex;
-    width: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
     justify-content: space-between;
+    justify-self: start;
     align-items: center;
 }
 
+.navbar ul li {
+    position: relative;
+    padding: 20px;
+}
+
 .navbar ul li a {
-    color: white;
+    color: black;
     font-weight: bold;
+
+}
+
+.navbar ul li:hover>a {
+    color: rgb(234, 79, 79);
+    cursor: pointer;
+}
+
+#experiences-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: black;
+    width: 250px;
+    text-align: left;
+}
+
+#experiences-box a {
+    color: white;
+}
+
+#experiences-box p {
+    color: white;
+    margin: 0;
 }

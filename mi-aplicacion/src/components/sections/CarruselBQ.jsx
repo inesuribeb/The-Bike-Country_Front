@@ -14,20 +14,32 @@ function CarruselBQ({ images }) {
     useEffect(() => {});
     //TODO: Diseño del carrusel por Ines
     return (
-        <>
-            <div className="carousel-section">
-                <div className="carousel-container"></div>
-                <div></div>
-                <div>
-                    <Button
-                        onClick={() => {}}
-                        text={
-                            "Discover the beauty and magic of the Basque Country"
-                        }
-                    ></Button>
-                </div>
+        <div className="carousel-section">
+            <div className="carousel-container">
+                <Button
+                    id="left-arrow"
+                    onClick={() => {
+                        prevSlide();
+                    }}
+                    text={"<"}
+                ></Button>
+                <img src={images[currentIndex]} alt="" />
+                <Button
+                    id="right-arrow"
+                    onClick={() => {
+                        nextSlide();
+                    }}
+                    text={">"}
+                ></Button>
             </div>
-        </>
+            <div className="discover">
+                <Button
+                    id="discover-button"
+                    onClick={() => {}}
+                    text={"Discover the beauty and magic of the Basque Country"}
+                ></Button>
+            </div>
+        </div>
     );
 }
 export default CarruselBQ;

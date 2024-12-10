@@ -16,7 +16,11 @@ function Sections() {
     ];
     return (
         <>
-            <Intro></Intro>
+            <Intro
+                title={"The Bike Country"}
+                content={"Premium bike experiences for those most demanding"}
+                imageUrl={"https://i.ibb.co/HzQLK2V/pruebafondo.png"}
+            ></Intro>
             <MoreAboutUs></MoreAboutUs>
             <CarruselBQ images={carruselImages}></CarruselBQ>
             <MoreExperiences></MoreExperiences>

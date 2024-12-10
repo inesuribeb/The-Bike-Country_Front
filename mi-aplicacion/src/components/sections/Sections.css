@@ -1,18 +1,18 @@
 /*Intro Section*/
 .intro-section {
-    background-image: url('https://images.pexels.com/photos/5807924/pexels-photo-5807924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    height: 100vh;
+    height: 90vh;
     background-size: cover;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    box-sizing: border-box;
     padding: 20px;
     color: white;
 }
 
 /*More About Us Section*/
 .more-about-us-section {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     background-color: white;
 }
@@ -39,7 +39,7 @@
     flex-direction: column;
     justify-content: end;
     height: 50%;
-    background-color: rgb(104, 147, 104);
+    background-color: rgb(114, 130, 90);
     padding: 20px 50px;
     gap: 50px;
 }
@@ -61,16 +61,93 @@
 /*Carrusel BQ*/
 .carousel-section {
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
+    padding: 20px;
+    background-color: white;
 }
 
 .carousel-container {
     overflow: hidden;
-    height: 80%;
+    height: 90%;
     display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.carousel-container #left-arrow {
+    border-radius: 8px 0 0 8px;
+}
+
+.carousel-container #right-arrow {
+    border-radius: 0 8px 8px 0;
+}
+
+.carousel-container img {
+    object-fit: cover;
+    width: 80%;
+    height: 100%;
+}
+
+.carousel-section .discover {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 10%;
 }
 
 .carousel-section button {
-    justify-self: end;
+    background-color: rgb(114, 130, 90);
+}
+
+.carousel-section button:hover {
+    outline-color: rgb(96, 107, 78);
+}
+
+/*More Experiences Section*/
+.more-experience-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    height: 90vh;
+    padding: 20px;
+    background-color: rgb(237, 223, 218);
+}
+
+.experiences-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 90%;
+    width: 100%;
+}
+
+.experience {
+    width: 1fr;
+    padding: 20px;
+}
+
+.experience p {
+    color: black;
+    font-size: 1.2rem;
+}
+
+.experience img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.more-experience-section .button-container {
+    display: flex;
+    justify-content: start;
+}
+
+.more-experience-section button {
+    background-color: white;
+    color: black;
 }

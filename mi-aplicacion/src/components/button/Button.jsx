@@ -1,7 +1,9 @@
-function Button({ onClick, text }) {
+function Button({ id, onClick, text }) {
     return (
         <>
-            <button onClick={onClick}>{text}</button>
+            <button id={id} onClick={onClick}>
+                {text}
+            </button>
         </>
     );
 }
