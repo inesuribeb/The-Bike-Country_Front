@@ -13,8 +13,6 @@ function CarruselBQ({ images }) {
         setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
     };
 
-    useEffect(() => {});
-    //TODO: Diseño del carrusel por Ines
     return (
         <div className="carousel-section">
             <div className="carousel-container">
@@ -23,7 +21,7 @@ function CarruselBQ({ images }) {
                     onClick={() => {
                         prevSlide();
                     }}
-                    text={"<"}
+                    children={<NavigateBeforeOutlinedIcon />}
                 ></Button>
                 <img src={images[currentIndex]} alt="" />
                 <Button
@@ -31,14 +29,16 @@ function CarruselBQ({ images }) {
                     onClick={() => {
                         nextSlide();
                     }}
-                    text={">"}
+                    children={<NavigateNextOutlinedIcon />}
                 ></Button>
             </div>
             <div className="discover">
                 <Button
                     id="discover-button"
                     onClick={() => {}}
-                    text={"Discover the beauty and magic of the Basque Country"}
+                    children={
+                        "Discover the beauty and magic of the Basque Country"
+                    }
                 ></Button>
             </div>
         </div>
