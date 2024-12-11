@@ -1,6 +1,7 @@
 import NavBar from "../../components/navbar/NavBar";
 import "./Contact.css";
 import ContactForm from "../../components/formulario/Formulario";
+import ContactDetails from "./ContactDetails";
 import { useState } from "react";
 
 function Contact() {
@@ -35,6 +36,10 @@ function Contact() {
                     </div>
 
                 </div>
+                <div className="contact-details-container">
+                <ContactDetails />
+                </div>
+
             </main>
 
         </>
