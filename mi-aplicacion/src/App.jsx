@@ -3,6 +3,9 @@ import { PageContext } from "./utils/js/context/PageContext.js";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Experiences from "./pages/experiences/Experiences";
+import Login from './pages/auth/Login'
+import Register from './pages/auth/Register'
+
 // import Contact from "./pages/contact/Contact";
 import { obtenerPacks, workerLogin } from "./utils/js/apiCallController.js";
 
@@ -20,7 +23,7 @@ function App() {
             const data = await workerLogin();
             console.log("Token obtenido:", data);
         }
-        loginByWorker();
+        
     }, []);
     useEffect(() => {
         console.log("Page cambiada a:", page);
@@ -31,6 +34,8 @@ function App() {
     const components = {
         home: Home,
         experiences: Experiences,
+        auth: Login,
+        register: Register,
         // contact: Contact,
     };
 

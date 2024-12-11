@@ -105,14 +105,16 @@ function NavBar() {
                             <a>Stories</a>
                         </li>
                         <li>
-                            <a>Contact</a>
+                            <a >
+                            Contact
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div className="right-bar">
                     <ul>
                         <li>
-                            <a>
+                            <a onClick={() => handleChangePage("auth")}>
                                 <PersonOutlineOutlinedIcon />
                             </a>
                         </li>
