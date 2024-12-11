@@ -1,0 +1,11 @@
+/*Intro Section*/
+.intro-section {
+    height: 90vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    color: white;
+}

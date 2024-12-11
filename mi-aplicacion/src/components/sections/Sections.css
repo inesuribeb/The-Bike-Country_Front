@@ -1,15 +1,3 @@
-/*Intro Section*/
-.intro-section {
-    height: 90vh;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 20px;
-    color: white;
-}
-
 /*More About Us Section*/
 .more-about-us-section {
     height: 90vh;
@@ -39,7 +27,7 @@
     flex-direction: column;
     justify-content: end;
     height: 50%;
-    background-color: rgb(114, 130, 90);
+    background-color: var(--color-1);
     padding: 20px 50px;
     gap: 50px;
 }
@@ -99,11 +87,11 @@
 }
 
 .carousel-section button {
-    background-color: rgb(114, 130, 90);
+    background-color: var(--color-1);
 }
 
 .carousel-section button:hover {
-    outline-color: rgb(96, 107, 78);
+    outline-color: var(--color-1);
 }
 
 /*More Experiences Section*/

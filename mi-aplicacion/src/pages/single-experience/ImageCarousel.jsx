@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Button from "../button/Button";
-import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
-import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 
 function CarruselBQ({ images }) {
     const [currentIndex, setCurrentIndex] = useState(0);

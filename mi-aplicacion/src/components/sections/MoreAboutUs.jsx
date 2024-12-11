@@ -14,7 +14,7 @@ function MoreAboutUs() {
 
                         <Button
                             onClick={() => {}}
-                            text={"Know more about us"}
+                            children={"Know more about us"}
                         ></Button>
                     </div>
                 </div>

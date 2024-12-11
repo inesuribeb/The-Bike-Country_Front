@@ -1,8 +1,8 @@
-function Button({ id, onClick, text }) {
+function Button({ id, onClick, children }) {
     return (
         <>
             <button id={id} onClick={onClick}>
-                {text}
+                {children}
             </button>
         </>
     );
