@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Post from "../../components/sections/Post";
+import Post from "./Post";
 
 function Stories() {
     const [posts, setPosts] = useState([
