@@ -3,16 +3,7 @@ import { PageContext } from "./utils/js/context/PageContext.js";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Experiences from "./pages/experiences/Experiences";
-<<<<<<< HEAD
 import Contact from "./pages/contact/Contact";
-function App() {
-    const [count, setCount] = useState(0);
-    const [page, setPage] = useState("contact");
-    const components = {
-        home: Home,
-        contact: Contact
-=======
-// import Contact from "./pages/contact/Contact";
 import { obtenerPacks, workerLogin } from "./utils/js/apiCallController.js";
 
 function App() {
@@ -29,7 +20,7 @@ function App() {
             const data = await workerLogin();
             console.log("Token obtenido:", data);
         }
-        loginByWorker();
+        
     }, []);
     useEffect(() => {
         console.log("Page cambiada a:", page);
@@ -40,8 +31,7 @@ function App() {
     const components = {
         home: Home,
         experiences: Experiences,
-        // contact: Contact,
->>>>>>> dev
+        contact: Contact,
     };
     const Component = components[page];
     return (

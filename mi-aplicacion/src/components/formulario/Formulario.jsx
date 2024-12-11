@@ -109,115 +109,126 @@ function ContactForm({ initialClient, onSubmit }) {
     return (
 
         <form onSubmit={handleSubmit}>
-            <div className="FirstName">
-                <label htmlFor="FirstName">First Name:</label>
-                <input
-                    type="text"
-                    name="FirstName"
-                    value={client.firstName}
-                    onChange={handleFirstName}
-                    required
-                />
-            </div>
-            <div className="LastName">
-                <label htmlFor="LastName">Last Name:</label>
-                <input
-                    type="text"
-                    name="LastName"
-                    value={client.lastName}
-                    onChange={handleLastName}
-                    required
-                />
-            </div>
-
-            <div className="EmailAndPhone">
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={client.email}
-                    onChange={handleEmail}
-                    required
-                />
-                <label htmlFor="phone">Phone:</label>
-                <input
-                    type="text"
-                    name="phone"
-                    value={client.phone}
-                    onChange={handlePhone}
-                    required
-                />
-            </div>
-
-            <div>
-                <label>Which experience are you interested in?</label>
-                <label>
+            <div className="input-section">
+                <div className="FirstName">
+                    <label htmlFor="FirstName">First Name <required>*</required></label>
                     <input
-                        type="radio"
-                        name="experience"
-                        value="Experience 1"
-                        checked={client.experience === "Experience 1"}
-                        onChange={handleExperience}
+                        type="text"
+                        name="FirstName"
+                        value={client.firstName}
+                        onChange={handleFirstName}
+                        required
                     />
-                    Experience 1
-                </label>
-                <label>
+                </div>
+                <div className="LastName">
+                    <label htmlFor="LastName">Last Name <required>*</required></label>
                     <input
-                        type="radio"
-                        name="experience"
-                        value="Experience 2"
-                        checked={client.experience === "Experience 2"}
-                        onChange={handleExperience}
+                        type="text"
+                        name="LastName"
+                        value={client.lastName}
+                        onChange={handleLastName}
+                        required
                     />
-                    Experience 2
-                </label>
-                <label>
+                </div>
+            </div>
+            <div className="input-section">
+                <div className="Email">
+                    <label htmlFor="email">Email <required>*</required></label>
                     <input
-                        type="radio"
-                        name="experience"
-                        value="Experience 3"
-                        checked={client.experience === "Experience 3"}
-                        onChange={handleExperience}
+                        type="email"
+                        name="email"
+                        value={client.email}
+                        onChange={handleEmail}
+                        required
                     />
-                    Experience 3
-                </label>
-                <label>How did you hear about us?</label>
+                </div>
+                <div className="Phone">
+                    <label htmlFor="phone">Phone <required>*</required></label>
+                    <input
+                        type="text"
+                        name="phone"
+                        value={client.phone}
+                        onChange={handlePhone}
+                        required
+                    />
+                </div>
             </div>
+            <div className="form-group">
+                <label>Which experience are you interested in? <required>*</required></label>
+                <div className="radio-group" >
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            name="experience"
+                            value="Experience 1"
+                            checked={client.experience === "Experience 1"}
+                            onChange={handleExperience}
+                        />
+                        <label for="experience1">Experience 1</label>
+                    </div>
+                    <div className="radio-option">
+                        <input
+                            type="radio"
+                            name="experience"
+                            value="Experience 2"
+                            checked={client.experience === "Experience 2"}
+                            onChange={handleExperience}
+                        />
 
-            <div>
-                <label htmlFor="message">Message:</label>
-                <input
-                    type="text"
-                    name="message"
-                    value={client.message}
-                    onChange={handleMessage}
-                    required
-                />
-            </div>
+                        <label for="experience2">Experience 2</label>
+                    </div>
+                    <div className="radio-option">
+                        <input
+                            type="radio"
+                            name="experience"
+                            value="Experience 3"
+                            checked={client.experience === "Experience 3"}
+                            onChange={handleExperience}
+                        />
+                        <label for="experience3">Experience 3</label>
+                    </div>
+                </div>
 
-            <div>
-                <label htmlFor="hearAboutUs">How did you hear about us?</label>
-                <select
-                    name="hearAboutUs"
-                    value={client.hearAboutUs || ""}
-                    onChange={handleHearAboutUs}
-                    required
-                >
-                    <option value="" disabled>Select an option</option>
-                    <option value="Google Search">Google Search</option>
-                    <option value="Friend suggestion">Friend suggestion</option>
-                    <option value="Repeating with you">Repeating with you</option>
-                    <option value="An event">An event</option>
-                    <option value="Social Media">Social Media</option>
-                    <option value="Advertising">Advertising</option>
-                    <option value="Other">Other</option>
 
-                </select>
+                <div className="input-select-option">
+                    <label htmlFor="hearAboutUs">How did you hear about us?</label>
+                    <select
+                        name="hearAboutUs"
+                        value={client.hearAboutUs || ""}
+                        onChange={handleHearAboutUs}
+                        required
+                    >
+                        <option value="" disabled>Select an option</option>
+                        <option value="Google Search">Google Search</option>
+                        <option value="Friend suggestion">Friend suggestion</option>
+                        <option value="Repeating with you">Repeating with you</option>
+                        <option value="An event">An event</option>
+                        <option value="Social Media">Social Media</option>
+                        <option value="Advertising">Advertising</option>
+                        <option value="Other">Other</option>
 
-            </div>
+                    </select>
 
-            <div>
-                <button className="send-button">Send</button>
+                </div>
+
+                <div className="input-message">
+                    <div className="message">
+                        <label htmlFor="message">Message:</label>
+                        <textarea
+                            type="text"
+                            name="message"
+                            value={client.message}
+                            onChange={handleMessage}
+                            required
+                        />
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <button className="send-button">Send</button>
+                </div>
             </div>
         </form>
 
