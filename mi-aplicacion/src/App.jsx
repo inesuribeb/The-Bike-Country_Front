@@ -6,7 +6,7 @@ import Experiences from "./pages/experiences/Experiences";
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import ClientProfile from './pages/clientProfile/ClientProfile'
-
+import Stories from "./pages/stories/Stories.jsx";
 // import Contact from "./pages/contact/Contact";
 import { obtenerPacks, workerLogin } from "./utils/js/apiCallController.js";
 
@@ -38,6 +38,7 @@ function App() {
         auth: Login,
         register: Register,
         clientProfile: ClientProfile,
+        stories: Stories,
         // contact: Contact,
     };
 
