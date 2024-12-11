@@ -105,9 +105,13 @@ function NavBar() {
                             <a>Stories</a>
                         </li>
                         <li>
+<<<<<<< HEAD
+                            <a onClick={() => handleChangePage("contact")}>Contact</a>
+=======
                             <a >
                             Contact
                             </a>
+>>>>>>> dev
                         </li>
                     </ul>
                 </div>

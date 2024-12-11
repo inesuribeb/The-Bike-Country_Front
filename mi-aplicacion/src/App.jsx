@@ -3,6 +3,7 @@ import { PageContext } from "./utils/js/context/PageContext.js";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Experiences from "./pages/experiences/Experiences";
+import Contact from "./pages/contact/Contact";
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import ClientProfile from './pages/clientProfile/ClientProfile'
@@ -35,13 +36,13 @@ function App() {
     const components = {
         home: Home,
         experiences: Experiences,
+        contact: Contact,
         auth: Login,
         register: Register,
         clientProfile: ClientProfile,
         stories: Stories,
         // contact: Contact,
     };
-
     const Component = components[page];
     return (
         <PageContext.Provider value={{ page, setPage }}>
