@@ -1,9 +1,12 @@
-function Intro() {
+function Intro({ title, content, imageUrl }) {
     return (
-        <>
-            <h1>The Bike Country</h1>
-            <h2>Premium bike experiences for those most demanding</h2>
-        </>
+        <div
+            className="intro-section"
+            style={{ backgroundImage: `url(${imageUrl})` }}
+        >
+            <h1>{title}</h1>
+            <h2>{content}</h2>
+        </div>
     );
 }
 export default Intro;

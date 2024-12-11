@@ -1,12 +1,11 @@
 import Button from "../button/Button";
 function MoreExperiences() {
     return (
-        <>
-            <div>
-                <div>
+        <div className="more-experience-section">
+            <div className="experiences-container">
+                <div className="experience">
                     <img
                         src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
-                        width={400}
                         alt=""
                     />
                     <p>
@@ -14,10 +13,9 @@ function MoreExperiences() {
                         needed. Quality and comfort are our basis.
                     </p>
                 </div>
-                <div>
+                <div className="experience">
                     <img
-                        src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
-                        width={400}
+                        src="https://www.liligo.es/magazine-viajes/wp-content/uploads/sites/43/2019/02/iStock-1144534910.jpg"
                         alt=""
                     />
                     <p>
@@ -28,10 +26,9 @@ function MoreExperiences() {
                         tradition and enjoying it in the best res- taurants.
                     </p>
                 </div>
-                <div>
+                <div className="experience">
                     <img
-                        src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
-                        width={400}
+                        src="https://hoteltheartist.com/wp-content/uploads/2024/06/H4A9894-min.jpg"
                         alt=""
                     />
                     <p>
@@ -41,13 +38,13 @@ function MoreExperiences() {
                     </p>
                 </div>
             </div>
-            <div>
+            <div className="button-container">
                 <Button
                     onClick={() => {}}
                     text={"Know more about our experiences"}
                 ></Button>
             </div>
-        </>
+        </div>
     );
 }
 
