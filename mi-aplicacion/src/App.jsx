@@ -3,7 +3,15 @@ import { PageContext } from "./utils/js/context/PageContext.js";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Experiences from "./pages/experiences/Experiences";
+<<<<<<< HEAD
 import Contact from "./pages/contact/Contact";
+=======
+import Login from './pages/auth/Login'
+import Register from './pages/auth/Register'
+import ClientProfile from './pages/clientProfile/ClientProfile'
+
+// import Contact from "./pages/contact/Contact";
+>>>>>>> dev
 import { obtenerPacks, workerLogin } from "./utils/js/apiCallController.js";
 
 function App() {
@@ -31,7 +39,14 @@ function App() {
     const components = {
         home: Home,
         experiences: Experiences,
+<<<<<<< HEAD
         contact: Contact,
+=======
+        auth: Login,
+        register: Register,
+        clientProfile: ClientProfile,
+        // contact: Contact,
+>>>>>>> dev
     };
     const Component = components[page];
     return (
