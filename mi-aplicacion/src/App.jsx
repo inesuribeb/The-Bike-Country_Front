@@ -30,15 +30,10 @@ function App() {
             const data = await workerLogin();
             console.log("Token obtenido:", data);
         }
-        async function loginByClient() {
-            const data = await clientLogin();
-            console.log("Token obtenido de cliente:", data);
-        }
         async function getClientProfile() {
             const data = await getMyProfile();
             console.log("Perfil obtenido:", data);
         }
-        loginByClient();
         getClientProfile();
     }, []);
     useEffect(() => {

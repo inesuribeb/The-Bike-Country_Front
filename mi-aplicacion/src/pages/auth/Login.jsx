@@ -1,5 +1,7 @@
 import NavBar from '../../components/navbar/NavBar'
 import LoginForm from './LoginForm'
+import './Login.css';
+
 
 function Login (){
     return (
@@ -8,7 +10,7 @@ function Login (){
                 <NavBar></NavBar>
             </header>
             
-            <main>
+            <main className="login-page">
                 <LoginForm></LoginForm>
             </main>
         </>

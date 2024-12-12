@@ -1,4 +1,6 @@
-const BASE_URL = "http://localhost:3004";
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
+
 
 async function fetchData(pathName, method = "GET", body = null) {
     try {
@@ -65,13 +67,9 @@ export async function workerLogin() {
         console.error("Error al obtener el login:", error);
     }
 }
-export async function clientLogin() {
+export async function clientLogin(body) {
     try {
-        const body = {
-            email: "sofia.gomez@example.com",
-            password: "12345",
-        };
-
+        
         const response = await fetchData(
             "client/api/clients/login",
             "POST",
@@ -88,6 +86,7 @@ export async function clientLogin() {
         return response.token;
     } catch (error) {
         console.error("Error al obtener el login:", error);
+        return null;
     }
 }
 export async function logout() {
