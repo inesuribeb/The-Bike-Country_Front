@@ -5,7 +5,7 @@ function PersonalData (){
         {
         name: "Ines",
         surname: "Uribe",
-        email: "Uribe",
+        email: "inesuribeb@gmail.com",
         phone: "628538684",
         dni: "16089533K",
         address: "Andres Cortina 18, 5D",

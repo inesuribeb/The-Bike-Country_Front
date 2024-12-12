@@ -1,5 +1,7 @@
 import NavBar from '../../components/navbar/NavBar'
 import RegistrationForm from './RegistrationForm';
+import './Register.css';
+
 
 function Register (){
     return (
@@ -8,7 +10,7 @@ function Register (){
                 <NavBar></NavBar>
             </header>
             
-            <main>
+            <main className="register-page">
                 <RegistrationForm></RegistrationForm>
             </main>
         </>

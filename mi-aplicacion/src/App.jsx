@@ -4,16 +4,22 @@ import "./App.css";
 import Home from "./pages/home/Home";
 import Experiences from "./pages/experiences/Experiences";
 import Contact from "./pages/contact/Contact";
-import Login from './pages/auth/Login'
-import Register from './pages/auth/Register'
-import ClientProfile from './pages/clientProfile/ClientProfile'
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import ClientProfile from "./pages/clientProfile/ClientProfile";
 import Stories from "./pages/stories/Stories";
-import { obtenerPacks, workerLogin } from "./utils/js/apiCallController.js";
+import {
+    obtenerPacks,
+    workerLogin,
+    clientLogin,
+    getMyProfile,
+} from "./utils/js/apiCallController.js";
 
 function App() {
     const [count, setCount] = useState(0);
     const [page, setPage] = useState("home");
     const [packs, setPacks] = useState(null);
+    //Pruebas de la api
     useEffect(() => {
         async function getPacks() {
             const data = await obtenerPacks();
@@ -24,7 +30,11 @@ function App() {
             const data = await workerLogin();
             console.log("Token obtenido:", data);
         }
-        
+        async function getClientProfile() {
+            const data = await getMyProfile();
+            console.log("Perfil obtenido:", data);
+        }
+        getClientProfile();
     }, []);
     useEffect(() => {
         console.log("Page cambiada a:", page);

@@ -8,6 +8,7 @@ function NavBar() {
     const maxHeight = 200;
     const minHeight = 100;
     const disableDelay = 300; // milliseconds
+
     const [navbarStyle, setNavbarStyle] = useState({
         height: maxHeight,
         background: `rgba(0, 0, 0, 0.5)`,
@@ -57,12 +58,12 @@ function NavBar() {
         <div className="navbar" style={navbarStyle}>
             <nav>
                 <div className="left-bar">
-                    <img src="/images/logotemporal.png" alt="Logo" />
+                    <a onClick={() => handleChangePage("home")}>
+                        <img src="/images/logotemporal.png" alt="Logo" />
+                    </a>
                     <ul>
                         <li>
-                            <a onClick={() => handleChangePage("home")}>
-                                About Us
-                            </a>
+                            <a>About Us</a>
                         </li>
                         <li>
                             <a>Basque Country</a>
