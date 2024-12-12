@@ -22,8 +22,16 @@
     height: 100%;
 }
 
-.navbar nav img {
+.navbar nav a {
     height: 80%;
+}
+
+.navbar nav a:hover {
+    cursor: pointer;
+}
+
+.navbar nav a img {
+    height: 100%;
 }
 
 .navbar ul {
