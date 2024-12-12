@@ -1,25 +1,23 @@
-import Button from '../../components/button/Button'
-
+import Button from '../../components/button/Button';
+import './InternalNav.css';
 
 function InternalNav({ menuItems }) {
     return (
-        <div>
+        <nav className="internal-nav">
             <ul>
                 {menuItems.map((item) => (
                     <li 
                         key={item.id}
                         className={item.active ? 'active' : ''}
                     >
-                        
-                            <Button onClick={item.onClick} children={item.label}>
-                                
-                            </Button>
-                        
-                        
+                        <Button 
+                            onClick={item.onClick} 
+                            children={item.label}
+                        />
                     </li>
                 ))}
             </ul>
-        </div>
+        </nav>
     );
 }
 
