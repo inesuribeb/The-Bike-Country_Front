@@ -14,7 +14,7 @@ function Experiences() {
             <Intro
                 title={"Experiences"}
                 content={""}
-                imageUrl={"https://i.ibb.co/HzQLK2V/pruebafondo.png"}>
+                imageUrl={"https://i.ibb.co/ZBFGSVd/back.png"}>
             </Intro>
             <main>
                 <ExperiencesPacks></ExperiencesPacks>

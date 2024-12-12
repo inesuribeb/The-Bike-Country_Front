@@ -3,6 +3,10 @@ import { PageContext } from "./utils/js/context/PageContext.js";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Experiences from "./pages/experiences/Experiences";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import ClientProfile from "./pages/clientProfile/ClientProfile";
+
 // import Contact from "./pages/contact/Contact";
 import {
     obtenerPacks,
@@ -46,6 +50,9 @@ function App() {
     const components = {
         home: Home,
         experiences: Experiences,
+        auth: Login,
+        register: Register,
+        clientProfile: ClientProfile,
         // contact: Contact,
     };
 

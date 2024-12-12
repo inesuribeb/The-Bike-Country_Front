@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Button from "../button/Button";
 
-function CarruselBQ({ images }) {
+function ImageCarousel({ images }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const length = images.length;
     const nextSlide = () => {
@@ -21,7 +21,7 @@ function CarruselBQ({ images }) {
                     onClick={() => {
                         prevSlide();
                     }}
-                    text={"<"}
+                    text={"Back"}
                 ></Button>
                 <img src={images[currentIndex]} alt="" />
                 <Button
@@ -29,17 +29,11 @@ function CarruselBQ({ images }) {
                     onClick={() => {
                         nextSlide();
                     }}
-                    text={">"}
+                    text={"Next"}
                 ></Button>
             </div>
-            <div className="discover">
-                <Button
-                    id="discover-button"
-                    onClick={() => {}}
-                    text={"Discover the beauty and magic of the Basque Country"}
-                ></Button>
-            </div>
+            
         </div>
     );
 }
-export default CarruselBQ;
+export default ImageCarousel;
