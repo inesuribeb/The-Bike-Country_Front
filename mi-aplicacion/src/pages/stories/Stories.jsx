@@ -13,10 +13,11 @@ function Stories() {
             <Intro
                 title={"Stories"}
                 content={""}
-                imageUrl={" https://www.belgradeadventure.com/wp-content/uploads/2018/11/bike-trip-friends-cycling-163305.jpeg"}>
+                imageUrl={" https://www.belgradeadventure.com/wp-content/uploads/2018/11/bike-trip-friends-cycling-163305.jpeg"}
+                className={"intro-stories"}>
             </Intro>
             <main>
-                <h2 className="stories-title">Share Your Experiences With Us</h2>
+                <h2 className="stories-title">Share Your Experience With Us</h2>
                 <FormStories></FormStories>
                 <BlogStories></BlogStories>
               

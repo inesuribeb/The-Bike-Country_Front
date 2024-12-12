@@ -1,8 +1,9 @@
 import "./Intro.css";
-function Intro({ title, content, imageUrl }) {
+
+function Intro({ title, content, imageUrl, className }) {
     return (
         <div
-            className="intro-section"
+            className={`intro-section ${className || ""}`} // Combina clases dinámicamente
             style={{ backgroundImage: `url(${imageUrl})` }}
         >
             <h1>{title}</h1>
@@ -10,4 +11,5 @@ function Intro({ title, content, imageUrl }) {
         </div>
     );
 }
+
 export default Intro;

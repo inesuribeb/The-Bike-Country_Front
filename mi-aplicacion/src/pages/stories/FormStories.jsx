@@ -1,5 +1,5 @@
+import "./FormStories.css"
 import { useState } from "react";
-
 
 function FormStories({ initialPost = { title: "", content: "", client: "" }, onSubmit }) {
     const [post, setPost] = useState(initialPost);
@@ -41,31 +41,40 @@ function FormStories({ initialPost = { title: "", content: "", client: "" }, onS
     }
     return (
         <>
-        <form onSubmit={handleSubmit}>
-                <label>Title</label>
-                <input
-                    type="text"
-                    name="title"
-                    value={post.title}
-                    onChange={handleTitle}
-                />
-                <label htmlFor="content">Content</label>
-                <input
-                    type="text"
-                    name="content"
-                    value={post.content}
-                    onChange={handleContent}
-                />
-                <label htmlFor="client">Client</label>
-                <input
-                    type="text"
-                    name="client"
-                    value={post.client}
-                    onChange={handleClient}
-                />
-                <button>Share</button>
+            <form className="form-stories" onSubmit={handleSubmit}>
+                <div>
+                    <div className="form-stories__inputs">
+                        <label>Title: </label>
+                        <input
+                            type="text"
+                            name="title"
+                            value={post.title}
+                            onChange={handleTitle}
+                        />
+                        <label htmlFor="client">Your Name: </label>
+                        <input
+                            type="text"
+                            name="client"
+                            value={post.client}
+                            onChange={handleClient}
 
-            </form>
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="content">Content: </label>
+                        <textarea
+                            type="text"
+                            name="content"
+                            value={post.content}
+                            onChange={handleContent}
+                        />
+                    </div>
+
+                    <div>
+                        <button className="share-button">SHARE</button>
+                    </div>
+                </div>
+            </form >
         </>
     )
 
