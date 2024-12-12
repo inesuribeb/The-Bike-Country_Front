@@ -8,7 +8,6 @@ import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import ClientProfile from './pages/clientProfile/ClientProfile'
 import Stories from "./pages/stories/Stories";
-// import Contact from "./pages/contact/Contact";
 import { obtenerPacks, workerLogin } from "./utils/js/apiCallController.js";
 
 function App() {
@@ -41,7 +40,7 @@ function App() {
         register: Register,
         clientProfile: ClientProfile,
         stories: Stories,
-        // contact: Contact,
+       
     };
     const Component = components[page];
     return (

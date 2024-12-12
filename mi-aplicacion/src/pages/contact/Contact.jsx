@@ -1,5 +1,5 @@
-import NavBar from "../../components/navbar/NavBar";
 import "./Contact.css";
+import NavBar from "../../components/navbar/NavBar";
 import ContactForm from "../../components/formulario/Formulario";
 import ContactDetails from "./ContactDetails";
 import { useState } from "react";
@@ -13,8 +13,7 @@ function Contact() {
         phone: "",
         message: "",
         experience: "",
-        hearAboutUs: "",
-        message: ""
+        hearAboutUs: ""
 
     })
 

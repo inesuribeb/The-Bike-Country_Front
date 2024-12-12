@@ -1,28 +1,26 @@
-import { useState } from "react";
-import Post from "./Post";
+// import "./Stories.css";
+import NavBar from "../../components/navbar/NavBar";
+import Intro from '../../components/sections/Intro';
+import FormStories from "./FormStories";
+import BlogStories from './BlogStories';
+
 
 function Stories() {
-    const [posts, setPosts] = useState([
-    //const [lastId, setLastId] = useState(0);
-        {
-            id: 1,
-            title: "Title 1",
-            content: "Content 1",
-            owner: "Owner 1"
-
-        }
-    ])
-
     return (
-        <section className="stories">
-            <section className="stories-container">
-                {posts.map(post => (
-                    <Post data={post} key={post.id} />
-                ))}
-
-            </section>
-        </section>
-    )
-
+        <>
+            <header>
+                <NavBar></NavBar>
+            </header>
+            <Intro
+                title={"Stories"}
+                content={""}
+                imageUrl={"https://www.belgradeadventure.com/wp-content/uploads/2018/11/bike-trip-friends-cycling-163305.jpeg"}>
+            </Intro>
+            <main>
+                <FormStories></FormStories>
+            </main>
+        </>
+    );
 }
+
 export default Stories;

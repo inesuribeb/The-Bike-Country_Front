@@ -101,7 +101,6 @@ function ContactForm({ initialClient, onSubmit }) {
             message: "",
             experience: "",
             hearAboutUs: "",
-            message: ""
         });
 
     }
