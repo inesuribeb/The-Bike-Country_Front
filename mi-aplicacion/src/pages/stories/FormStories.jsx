@@ -63,7 +63,7 @@ function FormStories({ initialPost = { title: "", content: "", client: "" }, onS
                     value={post.client}
                     onChange={handleClient}
                 />
-                <button>Save</button>
+                <button>Share</button>
 
             </form>
         </>

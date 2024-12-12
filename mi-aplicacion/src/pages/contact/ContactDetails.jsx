@@ -56,7 +56,7 @@ function ContactDetails() {
     return (
         <div className="contact-details-container">
             <div>
-                <h1>FAQS</h1>   {/* meter un desplegable */}
+                <h1>FAQS</h1>  
             </div>
             <div className="contact-details-section">
                 <h2 className="contact-details-title">Pricing & Financial</h2>
