@@ -1,8 +1,9 @@
 .client-main-profile {
-    display: flex;
-    padding: 2rem;
-    gap: 2rem;
-    min-height: calc(100vh - 64px); /* Asumiendo que el NavBar tiene 64px de alto */
+    display: grid;
+  grid-template-columns: 250px 1fr; /* Primera columna fija de 250px, segunda columna usa el espacio restante */
+  gap: 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
     margin-top: 180px; 
   }
   
@@ -13,4 +14,4 @@
   .content-section {
     flex: 1;
   }
-  
+

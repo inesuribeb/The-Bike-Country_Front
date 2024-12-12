@@ -20,6 +20,13 @@ function ClientProfile() {
             onClick: () => handleMenus('myBookings'),
             // icon: '📅',
             active: false
+        },
+        {
+            id: 3,
+            label: 'LOG OUT',
+            onClick: () => handleMenus('myBookings'),
+            // icon: '📅',
+            active: false
         }
     ];
 
