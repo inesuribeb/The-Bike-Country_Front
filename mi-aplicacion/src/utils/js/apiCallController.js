@@ -131,3 +131,18 @@ export async function checkAuthToken() {
         console.error("Error al verificar el token:", error);
     }
 }
+
+export async function getMyBookings() {
+    try {
+        
+
+        const response = await fetchData(
+            "reservations/api/reservations/" ,
+            "GET",
+            null
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener las reservas:", error);
+    }
+}

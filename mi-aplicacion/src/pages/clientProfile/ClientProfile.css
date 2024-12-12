@@ -1,0 +1,16 @@
+.client-main-profile {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    min-height: calc(100vh - 64px); /* Asumiendo que el NavBar tiene 64px de alto */
+    margin-top: 180px; 
+  }
+  
+  .nav-section {
+    width: 250px;
+  }
+  
+  .content-section {
+    flex: 1;
+  }
+  

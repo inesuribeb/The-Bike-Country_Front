@@ -2,9 +2,10 @@ import NavBar from '../../components/navbar/NavBar'
 import InternalNav from './InternalNav'
 import PersonalData from './PersonalData'
 import Bookings from './Bookings';
+import './ClientProfile.css'
 import { useState } from 'react';
 
-function ClientProfile (){
+function ClientProfile() {
     const menuItems = [
         {
             id: 1,
@@ -23,10 +24,10 @@ function ClientProfile (){
     ];
 
     const [currentMenu, setCurrentMenu] = useState("personalData");
-    const menus = {personalData: PersonalData, myBookings: Bookings};
+    const menus = { personalData: PersonalData, myBookings: Bookings };
     const MenuComponent = menus[currentMenu];
 
-    function handleMenus (menuName){
+    function handleMenus(menuName) {
         setCurrentMenu(menuName);
     }
 
@@ -35,13 +36,13 @@ function ClientProfile (){
             <header>
                 <NavBar></NavBar>
             </header>
-            <main>
-                <div>
-                    <InternalNav menuItems={menuItems} />   
+            <main className="client-main-profile">
+                <div className="nav-section">
+                    <InternalNav menuItems={menuItems} />
                 </div>
-                <div>
-                    <MenuComponent/>
-                </div>  
+                <div className="content-section">
+                    <MenuComponent />
+                </div>
             </main>
         </>
     );
