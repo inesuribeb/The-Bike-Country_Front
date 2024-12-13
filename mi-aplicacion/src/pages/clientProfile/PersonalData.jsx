@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import { getMyProfile } from '../../utils/js/apiCallController'
+import { PageContext } from "../../utils/js/context/PageContext.js";
 
 
 
@@ -42,7 +43,11 @@ function PersonalData() {
     const [client, setClient] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const { setPage } = useContext(PageContext);
+  
+    const handlePage = (pageName) => {
+      setPage(pageName)
+    };
     useEffect(() => {
         async function loadProfile() {
             try {
@@ -52,6 +57,7 @@ function PersonalData() {
             } catch (err) {
                 setError('Error loading profile data');
                 setLoading(false);
+                handlePage("auth")
             }
         }
 
