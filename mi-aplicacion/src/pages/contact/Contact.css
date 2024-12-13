@@ -1,0 +1,22 @@
+.contact-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: justify;
+    height: 100vh;
+    margin-top: 400px;
+
+    margin-bottom:-300px;
+}
+
+.contact-page {
+    width: 50%;
+    align-items: justify;
+    margin-left: 40px;
+
+}
+
+.form{
+    width: 50%;
+}
