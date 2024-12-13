@@ -68,7 +68,7 @@ function PersonalData() {
             <p>{client.name}</p>
             <p>{client.surname}</p>
             <p>{client.email}</p>
-            <p>{client.phone}</p>
+            <p>{client.country.prefix} {client.phone}</p>
             <p>{client.dni}</p>
             <p>{client.address}</p>
             <p>{client.country.name}</p>

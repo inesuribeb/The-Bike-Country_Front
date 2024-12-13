@@ -146,3 +146,41 @@ export async function getMyBookings() {
         console.error("Error al obtener las reservas:", error);
     }
 }
+
+export async function clientRegister(body) {
+    try {
+        
+        const response = await fetchData(
+            "client/api/clients/register",
+            "POST",
+            body
+        );
+
+        if (!response || !response.token) {
+            throw new Error("Login failed: token not received");
+        }
+
+        localStorage.setItem("authToken", response.token);
+        localStorage.setItem("authUserId", response.user_id);
+
+        return response.token;
+    } catch (error) {
+        console.error("Error al obtener el register:", error);
+        return null;
+    }
+}
+
+export async function getAllCountries() {
+    try {
+        
+
+        const response = await fetchData(
+            "countries/api/countries/" ,
+            "GET",
+            null
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener los países:", error);
+    }
+}
