@@ -102,7 +102,6 @@ export async function logout() {
 }
 
 export async function getMyProfile() {
-    try {
         const user_id = localStorage.getItem("authUserId");
 
         const response = await fetchData(
@@ -111,9 +110,6 @@ export async function getMyProfile() {
             null
         );
         return response.data;
-    } catch (error) {
-        console.error("Error al obtener el perfil:", error);
-    }
 }
 export async function checkAuthToken() {
     try {

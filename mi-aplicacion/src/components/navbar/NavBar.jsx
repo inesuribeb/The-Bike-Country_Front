@@ -113,7 +113,7 @@ function NavBar() {
                 <div className="right-bar">
                     <ul>
                         <li>
-                            <a onClick={() => handleChangePage("auth")}>
+                            <a onClick={() => handleChangePage("clientProfile")}>
                                 <PersonOutlineOutlinedIcon />
                             </a>
                         </li>
