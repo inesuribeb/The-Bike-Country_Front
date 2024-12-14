@@ -62,7 +62,7 @@ const ReservationModal = ({ isOpen, onClose, experience, onSubmit, userId }) => 
         <div className="modal-overlay">
             <div className="modal-content">
                 <button className="modal-close" onClick={onClose}>X</button>
-                <h2 className="modal-title">Reserve {experience.name}</h2>
+                <h2 className="modal-title">Book {experience.name}</h2>
 
                 {loading ? (
                     <div className="modal-loading">Loading sources...</div>
@@ -76,7 +76,7 @@ const ReservationModal = ({ isOpen, onClose, experience, onSubmit, userId }) => 
                             </div>
                         )}
                         <label className="form-label">
-                            Source:
+                            How did you find us?
                             <select
                                 value={selectedSource}
                                 onChange={(e) => setSelectedSource(e.target.value)}
@@ -102,7 +102,7 @@ const ReservationModal = ({ isOpen, onClose, experience, onSubmit, userId }) => 
                         </label>
 
                         <label className="form-label">
-                            Requested Dates (comma-separated):
+                            Requested Dates:
                             <input
                                 type="text"
                                 name="requested_dates"
