@@ -184,7 +184,7 @@ export async function cancelBooking(bookingId, userId, packId) {
         };
 
         const response = await fetchData(
-            `bookings/api/bookings/cancel/${bookingId}`,
+            `reservations/api/reservations/${bookingId}/cancel`, 
             "PUT",
             body
         );
@@ -217,5 +217,39 @@ export async function updateClient(userId, userData) {
     } catch (error) {
         console.error("Error al actualizar cliente:", error);
         throw error;
+    }
+}
+
+export async function createReservation(body) {
+    try {
+        console.log("Enviando reserva:", body);
+        const response = await fetchData(
+            "reservations/api/reservations/create", 
+            "POST",
+            body
+        );
+
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error al crear la reserva");
+        }
+
+        return response.data;
+    } catch (error) {
+        console.error("Error al crear la reserva:", error);
+        throw error;
+    }
+}
+
+export async function getAllSources() {
+    try {
+        const response = await fetchData(
+            "source/api/sources/",
+            "GET",
+            null
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener las sources:", error);
+        throw error; 
     }
 }

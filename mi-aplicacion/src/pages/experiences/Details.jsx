@@ -85,43 +85,6 @@ function Details() {
     ];
 
     return (
-    //     <div className="details-container">
-    //         <div className="details-section">
-    //             <h2 className="details-title">What's included?</h2>
-    //             <div className="details-list">
-    //                 {includedItems.map((item) => (
-    //                     <div key={item.id} className="details-item">
-    //                         <div className="details-item__header">
-    //                             <p className="details-item__text">{item.text}</p>
-    //                             <PlusButton className="details-item__button" />
-    //                         </div>
-    //                         <div className="details-item__description">
-    //                             <p>{item.description}</p>
-    //                         </div>
-    //                     </div>
-    //                 ))}
-    //             </div>
-    //         </div>
-
-    //         <div className="details-section">
-    //             <h2 className="details-title">Extras</h2>
-    //             <div className="details-list">
-    //                 {extrasItems.map((item) => (
-    //                     <div key={item.id} className="details-item">
-    //                         <div className="details-item__header">
-    //                             <p className="details-item__text">{item.text}</p>
-    //                             <PlusButton className="details-item__button" />
-    //                         </div>
-    //                         <div className="details-item__description">
-    //                             <p>{item.description}</p>
-    //                         </div>
-    //                     </div>
-    //                 ))}
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
-    
         <div className="details-container">
             <div className="details-section">
                 <h2 className="details-title">What's included?</h2>

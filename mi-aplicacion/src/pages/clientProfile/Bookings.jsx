@@ -25,7 +25,7 @@ function Bookings() {
         async function loadBookings() {
             try {
                 const response = await getMyBookings();
-                setBookings(response || []); 
+                setBookings(response || []);
                 setLoading(false);
             } catch (err) {
                 console.error('Error detallado:', err);
@@ -71,14 +71,14 @@ function Bookings() {
                     </div>
                     <div className='actions'>
                         <h5>Actions</h5>
-                        <button
-                            onClick={() => handleCancelBooking(booking)}
-                            disabled={booking.status === 'cancelled' || booking.status === 'completed'}
-                            className={booking.status === 'cancelled' || booking.status === 'completed' ? 'button-disabled' : ''}
-                        >
-                            CANCEL
-                        </button>
-                        {/* <button onClick={() => handleCancelBooking(booking)}>CANCEL</button> */}
+                        {booking.status !== 'cancelled' && booking.status !== 'completed' && (
+                            <button
+                                onClick={() => handleCancelBooking(booking)}
+                                className='cancel-button'
+                            >
+                                CANCEL
+                            </button>
+                        )}
                     </div>
                 </div>
             ))}
