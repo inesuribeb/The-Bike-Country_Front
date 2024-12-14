@@ -1,43 +1,8 @@
 import React, { useState, useEffect,useContext } from 'react';
 import { getMyProfile } from '../../utils/js/apiCallController'
 import { PageContext } from "../../utils/js/context/PageContext.js";
+import './PersonalData.css';
 
-
-
-// function PersonalData (){
-
-//     const client = 
-//         {
-//         name: "Ines",
-//         surname: "Uribe",
-//         email: "inesuribeb@gmail.com",
-//         phone: "628538684",
-//         dni: "16089533K",
-//         address: "Andres Cortina 18, 5D",
-//         country: {
-//                 name: "Guinea-Bissau",
-//                 iso_code: "GW",
-//                 prefix: "+245"
-//             }
-//         }
-        
-//     return (
-//         <>
-//             <div>
-//                 <h3>Hello {client.name}</h3>
-//                 <p>{client.name}</p>
-//                 <p>{client.surname}</p>
-//                 <p>{client.email}</p>
-//                 <p>{client.phone}</p>
-//                 <p>{client.dni}</p>
-//                 <p>{client.address}</p>
-//                 <p>{client.country.name}</p>
-//             </div>
-//         </>
-//     );
-// }
-
-// export default PersonalData;
 
 function PersonalData() {
     const [client, setClient] = useState(null);
@@ -69,15 +34,20 @@ function PersonalData() {
     if (!client) return <div>No client data available</div>;
 
     return (
-        <div>
-            <h3>Hello {client.name}</h3>
-            <p>{client.name}</p>
-            <p>{client.surname}</p>
-            <p>{client.email}</p>
-            <p>{client.country.prefix} {client.phone}</p>
-            <p>{client.dni}</p>
-            <p>{client.address}</p>
-            <p>{client.country.name}</p>
+        <div className='content-data'>
+            <div className='hello'>
+                <div className='color' ></div>
+                <h3>{client.name} {client.surname}</h3>
+            </div>
+            <div className='data-info'>
+                <p>{client.name}</p>
+                <p>{client.surname}</p>
+                <p>{client.email}</p>
+                <p>{client.country.prefix} {client.phone}</p>
+                <p>{client.dni}</p>
+                <p>{client.address}</p>
+                <p>{client.country.name}</p>
+            </div>
         </div>
     );
 }

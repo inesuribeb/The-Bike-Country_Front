@@ -26,9 +26,9 @@
   }
   
   .internal-nav li.active button {
-    color: black; /*no esta sirviendo*/
+    color: 666; /*no esta sirviendo*/
   }
   
   .internal-nav button:hover {
-    color: white;
+    color: #666;
   }

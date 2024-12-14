@@ -1,17 +1,29 @@
 .client-main-profile {
-    display: grid;
-  grid-template-columns: 250px 1fr; /* Primera columna fija de 250px, segunda columna usa el espacio restante */
-  gap: 2rem;
-  padding: 2rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
   min-height: calc(100vh - 64px);
-    margin-top: 180px; 
-  }
-  
-  .nav-section {
-    width: 250px;
-  }
-  
-  .content-section {
-    flex: 1;
-  }
+  margin-top: 210px;
+}
+
+.membership {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.membership-title {
+  margin: 0;
+  padding: 0.5rem 0;
+  border-top: 0.5px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding-left: 16px;
+  letter-spacing: 1.5px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1rem;
+  padding: 0;
+}
 

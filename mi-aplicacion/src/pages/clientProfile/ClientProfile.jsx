@@ -3,7 +3,7 @@ import InternalNav from './InternalNav'
 import PersonalData from './PersonalData'
 import Bookings from './Bookings';
 import './ClientProfile.css'
-import { useState, useContext  } from 'react';
+import { useState, useContext } from 'react';
 import { logout } from '../../utils/js/apiCallController';
 import { PageContext } from "../../utils/js/context/PageContext";
 
@@ -14,7 +14,7 @@ function ClientProfile() {
     const handleLogout = async () => {
         try {
             await logout();
-            setPage('home'); 
+            setPage('home');
         } catch (error) {
             console.error('Error during logout:', error);
             alert('Error al cerrar sesión');
@@ -59,11 +59,16 @@ function ClientProfile() {
                 <NavBar></NavBar>
             </header>
             <main className="client-main-profile">
-                <div className="nav-section">
-                    <InternalNav menuItems={menuItems} />
+                <div className="membership">
+                    <h1 className="membership-title">MEMBERSHIP</h1>
                 </div>
-                <div className="content-section">
-                    <MenuComponent />
+                <div className="main-content">
+                    <div className="nav-section">
+                        <InternalNav menuItems={menuItems} />
+                    </div>
+                    <div className="content-section">
+                        <MenuComponent />
+                    </div>
                 </div>
             </main>
         </>

@@ -1,0 +1,34 @@
+.content-data {
+    padding: 0rem;
+}
+
+.hello {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid black;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    background-color: #FFD700; 
+    border-radius: 50%; 
+}
+
+.hello h3 {
+    margin: 0;
+}
+
+.data-info {
+    line-height: 1.6; 
+}
+
+.data-info p {
+    margin: 0.5rem 0;
+}
