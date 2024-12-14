@@ -41,23 +41,6 @@ function PersonalData() {
     };
 
 
-    const handleEditClick = () => {
-        console.log('Datos del cliente al entrar en modo edición:', {
-            id: client.user_id,
-            name: client.name,
-            surname: client.surname,
-            email: client.email,
-            phone: client.phone,
-            dni: client.dni,
-            address: client.address,
-            country: {
-                id: client.country_id,
-                name: client.country.name
-            }
-        });
-        setIsEditing(true);
-    };
-
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
     if (!client) return <div>No client data available</div>;

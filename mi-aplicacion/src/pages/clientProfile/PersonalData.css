@@ -1,5 +1,6 @@
 .content-data {
     padding: 0rem;
+    box-sizing: border-box;
 }
 
 .hello {
@@ -12,6 +13,7 @@
     padding-bottom: 3rem;
     padding-left: 0;
     padding-right: 0;
+    box-sizing: border-box;
 }
 
 .color {
@@ -27,6 +29,8 @@
 
 .data-info {
     line-height: 1.6; 
+    box-sizing: border-box;
+
 }
 
 .data-info p {
