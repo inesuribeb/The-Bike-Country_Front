@@ -204,7 +204,7 @@ export async function cancelBooking(bookingId, userId, packId) {
 export async function updateClient(userId, userData) {
     try {
         const response = await fetchData(
-            `client/api/clients/${userId}`,
+            `client/api/clients/${userId}/update`,
             "PUT",
             userData
         );

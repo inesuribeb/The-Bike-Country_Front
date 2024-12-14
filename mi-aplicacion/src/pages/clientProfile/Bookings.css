@@ -1,39 +1,3 @@
-/* .bookings-content {
-    padding: 0rem;
-}
-
-.bookings-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid black;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.color {
-    width: 40px;
-    height: 40px;
-    background-color: #FFD700; 
-    border-radius: 50%; 
-}
-
-.bookings-header h3 {
-    margin: 0;
-}
-
-.booking-item {
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.booking-item p {
-    margin: 0.5rem 0;
-} */
-
 .bookings-content {
     padding: 0rem;
 }

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { updateClient } from '../../utils/js/apiCallController';
+import React, { useState, useEffect } from 'react';
+import { updateClient, getAllCountries } from '../../utils/js/apiCallController';
 import CountryAutocomplete from '../auth/CountryAutocomplete';
 import './EditPersonalData.css'
 
 
 function EditPersonalData({ client, onSuccess, onCancel }) {
+
     const [formData, setFormData] = useState({
         name: client.name,
         surname: client.surname,
@@ -12,12 +13,35 @@ function EditPersonalData({ client, onSuccess, onCancel }) {
         phone: client.phone,
         dni: client.dni,
         address: client.address,
-        country_id: client.country.id
+        country_id: client.country?.name || '' 
     });
+
+    console.log('Estado del formulario:', formData);
     const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const initializeCountry = async () => {
+            try {
+                const countries = await getAllCountries();
+                const countryMatch = countries.find(c => c.name === client.country?.name);
+                if (countryMatch) {
+                    setFormData(prev => ({
+                        ...prev,
+                        country_id: countryMatch.country_id
+                    }));
+                }
+            } catch (error) {
+                console.error('Error initializing country:', error);
+            }
+        };
+
+        initializeCountry();
+    }, [client]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        console.log('Cambio en campo:', name, 'nuevo valor:', value);
+
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -27,7 +51,7 @@ function EditPersonalData({ client, onSuccess, onCancel }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const updatedData = await updateClient(client.id, formData);
+            const updatedData = await updateClient(client.user_id, formData);
             onSuccess(updatedData);
         } catch (err) {
             setError(err.message);
@@ -110,17 +134,6 @@ function EditPersonalData({ client, onSuccess, onCancel }) {
                 />
             </div>
 
-            {/* <div>
-                <label htmlFor="country">Address</label>
-                <input
-                    type="text"
-                    id="country"
-                    name="country"
-                    value={formData.country_id}
-                    onChange={handleChange}
-                    required
-                />
-            </div> */}
             <div>
                 <CountryAutocomplete
                     value={formData.country_id} 

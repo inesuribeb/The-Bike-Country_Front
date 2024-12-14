@@ -54,7 +54,6 @@
     border-color: #666;
 }
 
-/* Estilos específicos para el CountryAutocomplete */
 .edit-clientProfile-country input {
     width: 100%;
     padding: 0.5rem 0;
@@ -63,10 +62,12 @@
     outline: none;
     font-size: 1rem;
     background: transparent;
+    color: #000;
 }
 
 .edit-clientProfile-country input:focus {
     border-bottom: 1px solid #000;
+    color: black
 }
 
 .edit-clientProfile-country ul {

@@ -32,8 +32,30 @@ function PersonalData() {
     }, []);
 
     const handleUpdateSuccess = (updatedData) => {
-        setClient(updatedData);
+        const formattedData = {
+            ...updatedData,
+            country: updatedData.country || client.country 
+        };
+        setClient(formattedData);
         setIsEditing(false);
+    };
+
+
+    const handleEditClick = () => {
+        console.log('Datos del cliente al entrar en modo edición:', {
+            id: client.user_id,
+            name: client.name,
+            surname: client.surname,
+            email: client.email,
+            phone: client.phone,
+            dni: client.dni,
+            address: client.address,
+            country: {
+                id: client.country_id,
+                name: client.country.name
+            }
+        });
+        setIsEditing(true);
     };
 
     if (loading) return <div>Loading...</div>;
@@ -41,22 +63,6 @@ function PersonalData() {
     if (!client) return <div>No client data available</div>;
 
     return (
-        // <div className='content-data'>
-        //     <div className='hello'>
-        //         <div className='color' ></div>
-        //         <h3>{client.name} {client.surname}</h3>
-        //     </div>
-        //     <div className='data-info'>
-        //         <p>{client.name}</p>
-        //         <p>{client.surname}</p>
-        //         <p>{client.email}</p>
-        //         <p>{client.country.prefix} {client.phone}</p>
-        //         <p>{client.dni}</p>
-        //         <p>{client.address}</p>
-        //         <p>{client.country.name}</p>
-        //     </div>
-        // </div>
-
         <div className='content-data'>
             <div className='hello'>
                 <div className='color' />
@@ -68,10 +74,10 @@ function PersonalData() {
                         <p>{client.name}</p>
                         <p>{client.surname}</p>
                         <p>{client.email}</p>
-                        <p>{client.country.prefix} {client.phone}</p>
+                        <p>{client.country?.prefix} {client.phone}</p> 
                         <p>{client.dni}</p>
                         <p>{client.address}</p>
-                        <p>{client.country.name}</p>
+                        <p>{client.country?.name}</p> 
                     </div>
                     <button onClick={() => setIsEditing(true)}>Edit Profile</button>
                 </>
