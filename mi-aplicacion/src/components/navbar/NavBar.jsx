@@ -2,16 +2,19 @@ import "./NavBar.css";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useContext } from "react";
+import { PageContext } from "../../utils/js/context/PageContext.js";
 function NavBar() {
     const maxHeight = 200;
     const minHeight = 100;
+    const disableDelay = 300; // milliseconds
 
     const [navbarStyle, setNavbarStyle] = useState({
         height: maxHeight,
-        background: `rgba(255, 255, 255, 0.5)`,
+        background: `rgba(0, 0, 0, 0.5)`,
     });
+    const [isExperiencesVisible, setIsExperiencesVisible] = useState(false);
+    const { setPage } = useContext(PageContext);
 
     const handleScroll = () => {
         const position = window.scrollY;
@@ -23,7 +26,7 @@ function NavBar() {
 
         setNavbarStyle({
             height: newHeight,
-            background: `rgba(255, 255, 255, ${newOpacity})`,
+            background: `rgba(0, 0, 0, ${newOpacity})`,
         });
     };
 
@@ -35,7 +38,6 @@ function NavBar() {
         };
     }, []);
 
-    const [isExperiencesVisible, setIsExperiencesVisible] = useState(false);
     let hoverTimeout;
 
     const handleMouseEnter = () => {
@@ -46,14 +48,19 @@ function NavBar() {
     const handleMouseLeave = () => {
         hoverTimeout = setTimeout(() => {
             setIsExperiencesVisible(false);
-        }, 1000);
+        }, disableDelay);
     };
 
+    const handleChangePage = (pageName) => {
+        setPage(pageName);
+    };
     return (
         <div className="navbar" style={navbarStyle}>
             <nav>
                 <div className="left-bar">
-                    <img src="/images/logotemporal.png" alt="Logo" />
+                    <a onClick={() => handleChangePage("home")}>
+                        <img src="/images/logotemporal.png" alt="Logo" />
+                    </a>
                     <ul>
                         <li>
                             <a>About Us</a>
@@ -65,6 +72,7 @@ function NavBar() {
                             <a
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
+                                onClick={() => handleChangePage("experiences")}
                             >
                                 Experiencies
                             </a>
@@ -95,21 +103,25 @@ function NavBar() {
                             </div>
                         </li>
                         <li>
-                            <a>Stories</a>
+                            <a onClick={() => handleChangePage("stories")}>Stories</a>
                         </li>
                         <li>
-                            <a>Contact</a>
+                            <a onClick={() => handleChangePage("contact")}>Contact</a>
                         </li>
                     </ul>
                 </div>
                 <div className="right-bar">
                     <ul>
-                        <PersonOutlineOutlinedIcon
-                            style={{ color: "black", fontSize: "20px" }}
-                        />
-                        <FavoriteBorderOutlinedIcon
-                            style={{ color: "black", fontSize: "20px" }}
-                        />
+                        <li>
+                            <a onClick={() => handleChangePage("clientProfile")}>
+                                <PersonOutlineOutlinedIcon />
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <FavoriteBorderOutlinedIcon />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

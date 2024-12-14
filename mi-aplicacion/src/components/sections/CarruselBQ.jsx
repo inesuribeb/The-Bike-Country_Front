@@ -13,8 +13,6 @@ function CarruselBQ({ images }) {
         setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
     };
 
-    useEffect(() => {});
-    //TODO: Diseño del carrusel por Ines
     return (
         <div className="carousel-section">
             <div className="carousel-container">

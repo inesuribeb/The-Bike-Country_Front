@@ -1,0 +1,92 @@
+.input-section,
+.input-mesage {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.input-section{
+ gap: 20px;
+}
+
+.FirstName,
+.LastName,
+.Email,
+.Phone,
+.message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.FirstName input,
+.LastName input,
+.Email input,
+.Phone input,
+.input-select-option select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+.input-select-option select {
+  margin-bottom: 10px;
+}
+
+/* Contenedor de los radios */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* Espacio entre el botón y la etiqueta */
+}
+
+/* Opcional: Estilo del input radio */
+input[type="radio"] {
+  margin: 0;
+  /* Quita espacio extra predeterminado */
+}
+
+
+textarea {
+  width: 100%; 
+  min-height: 100px;
+  max-height: 300px; 
+  padding: 10px; 
+  font-size: 14px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  resize: vertical;
+}
+
+required {
+  color: red;
+}
+
+.message{
+  margin-top: 10px;
+}
+
+.form{
+  margin-right:60px;
+}
+.send-button {
+  margin-top: 20px;
+  background-color:  #FED920;
+  color: black;
+  width: 30%;
+  cursor: pointer;
+
+}

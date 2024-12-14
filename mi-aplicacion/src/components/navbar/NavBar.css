@@ -6,7 +6,7 @@
     z-index: 100;
     width: 100%;
     transition: none;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--color-navBar);
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -22,8 +22,16 @@
     height: 100%;
 }
 
-.navbar nav img {
+.navbar nav a {
     height: 80%;
+}
+
+.navbar nav a:hover {
+    cursor: pointer;
+}
+
+.navbar nav a img {
+    height: 100%;
 }
 
 .navbar ul {
@@ -41,14 +49,15 @@
 }
 
 .navbar ul li a {
-    color: black;
+    color: var(--font-color-navBar);
     font-size: 0.8rem;
     font-weight: bold;
 
 }
 
-.navbar ul li:hover>a {
-    color: rgb(234, 79, 79);
+.navbar ul li a:hover,
+#experiences-box a:hover {
+    color: var(--font-color-navBar-hover);
     cursor: pointer;
 }
 
@@ -59,18 +68,19 @@
     top: 70px;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: black;
+    background-color: var(--color-navBar);
     width: 250px;
     text-align: left;
 }
 
 #experiences-box a {
-    color: white;
+    color: var(--font-color-navBar);
 }
 
 #experiences-box p {
-    color: white;
+    color: var(--font-color-navBar);
     margin: 0;
+    font-size: 1rem;
 }
 
 .left-bar {
@@ -87,5 +97,4 @@
 
 .right-bar ul {
     display: flex;
-    gap: 20px;
 }

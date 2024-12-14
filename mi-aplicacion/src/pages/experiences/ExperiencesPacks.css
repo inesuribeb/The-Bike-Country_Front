@@ -1,0 +1,11 @@
+.experiences-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    background-color: #f5f5f5; 
+    box-sizing: border-box;
+}
