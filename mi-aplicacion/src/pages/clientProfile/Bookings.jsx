@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getMyBookings } from '../../utils/js/apiCallController';
 import './Bookings.css';
+import { cancelBooking } from '../../utils/js/apiCallController';
 
 
 
@@ -9,11 +10,22 @@ function Bookings() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const handleCancelBooking = async (booking) => {
+        try {
+            await cancelBooking(booking.id, booking.user_id, booking.pack_id);
+            const response = await getMyBookings();
+            setBookings(response || []);
+        } catch (error) {
+            console.error('Error al cancelar la reserva:', error);
+            setError('No se pudo cancelar la reserva');
+        }
+    };
+
     useEffect(() => {
         async function loadBookings() {
             try {
                 const response = await getMyBookings();
-                setBookings(response || []); // Quitamos el .data
+                setBookings(response || []); 
                 setLoading(false);
             } catch (err) {
                 console.error('Error detallado:', err);
@@ -21,7 +33,7 @@ function Bookings() {
                 setLoading(false);
             }
         }
-    
+
         loadBookings();
     }, []);
 
@@ -31,39 +43,46 @@ function Bookings() {
 
     return (
         <div className="bookings-content">
-        <div className="bookings-header">
-            <div className='color'></div>
-            <h3>My bookings</h3>
-        </div>
-        {bookings.map((booking) => (
-            <div key={booking.id} className="booking-item">
-                <div className='orderRef'>
-                    <h5>Orders</h5>
-                    <p>Ref: {booking.id}</p>
-                    <p>on {booking.application_date}</p>
-                </div>
-                <div className='orderDetails'>
-                    <h5>Details</h5>
-                    <p>{booking.pack.name}</p>
-                    <p>{booking.pack.duration} days</p>
-                    <p>Requested dates: {booking.requested_dates}</p>
-                </div>
-                <div className='total'>  
-                    <h5>Total</h5>  
-                    <p>EUR {booking.pack.price}</p>
-                    {/* <p>Your message: {booking.message}</p> */}
-                </div>
-                <div className='status'>
-                    <h5>STATUS</h5>
-                    <p>{booking.status}</p>
-                </div>
-                <div className='actions'>
-                    <h5>Actions</h5>
-                    <button>CANCEL</button>
-                </div>
+            <div className="bookings-header">
+                <div className='color'></div>
+                <h3>My bookings</h3>
             </div>
-        ))}
-    </div>
+            {bookings.map((booking) => (
+                <div key={booking.id} className="booking-item">
+                    <div className='orderRef'>
+                        <h5>Orders</h5>
+                        <p>Ref: {booking.id}</p>
+                        <p>on {booking.application_date}</p>
+                    </div>
+                    <div className='orderDetails'>
+                        <h5>Details</h5>
+                        <p>{booking.pack.name}</p>
+                        <p>{booking.pack.duration} days</p>
+                        <p>Requested dates: {booking.requested_dates}</p>
+                    </div>
+                    <div className='total'>
+                        <h5>Total</h5>
+                        <p>EUR {booking.pack.price}</p>
+                        {/* <p>Your message: {booking.message}</p> */}
+                    </div>
+                    <div className='status'>
+                        <h5>STATUS</h5>
+                        <p>{booking.status}</p>
+                    </div>
+                    <div className='actions'>
+                        <h5>Actions</h5>
+                        <button
+                            onClick={() => handleCancelBooking(booking)}
+                            disabled={booking.status === 'cancelled' || booking.status === 'completed'}
+                            className={booking.status === 'cancelled' || booking.status === 'completed' ? 'button-disabled' : ''}
+                        >
+                            CANCEL
+                        </button>
+                        {/* <button onClick={() => handleCancelBooking(booking)}>CANCEL</button> */}
+                    </div>
+                </div>
+            ))}
+        </div>
     );
 }
 

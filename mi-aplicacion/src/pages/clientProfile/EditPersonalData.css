@@ -1,0 +1,86 @@
+.edit-form {
+    padding: 0;
+}
+
+.edit-form div {
+    margin-bottom: 1.5rem;
+}
+
+.edit-form label {
+    display: block;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.edit-form input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.edit-form input:focus {
+    border-bottom: 1px solid #000;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.form-buttons {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-buttons button {
+    padding: 0.5rem 2rem;
+    border: 1px solid #000;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-buttons button:hover {
+    background: #000;
+    color: white;
+}
+
+.form-buttons button[type="button"] {
+    border-color: #666;
+}
+
+/* Estilos específicos para el CountryAutocomplete */
+.edit-clientProfile-country input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.edit-clientProfile-country input:focus {
+    border-bottom: 1px solid #000;
+}
+
+.edit-clientProfile-country ul {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.edit-clientProfile-country li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.edit-clientProfile-country li:hover {
+    background-color: #f5f5f5;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getAllCountries } from '../../utils/js/apiCallController'; 
 
-const CountryAutocomplete = ({ value, onChange, onFocus, onBlur }) => {
+const CountryAutocomplete = ({ value, onChange, onFocus, onBlur, className = ''}) => {
     const [countries, setCountries] = useState([]);
     const [filteredCountries, setFilteredCountries] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
@@ -88,7 +88,7 @@ const CountryAutocomplete = ({ value, onChange, onFocus, onBlur }) => {
     };
   
     return (
-      <div className="form-group relative" ref={wrapperRef}>
+      <div className={`form-group relative ${className}`} ref={wrapperRef}>
         <div className="input-container">
           {(isFocused || inputValue) && (
             <label 

@@ -175,3 +175,47 @@ export async function getAllCountries() {
         console.error("Error al obtener los países:", error);
     }
 }
+
+export async function cancelBooking(bookingId, userId, packId) {
+    try {
+        const body = {
+            user_id: userId,
+            pack_id: packId
+        };
+
+        const response = await fetchData(
+            `bookings/api/bookings/cancel/${bookingId}`,
+            "PUT",
+            body
+        );
+
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error al cancelar la reserva");
+        }
+
+        return response;
+
+    } catch (error) {
+        console.error("Error al cancelar la reserva:", error);
+        throw error;
+    }
+}
+
+export async function updateClient(userId, userData) {
+    try {
+        const response = await fetchData(
+            `client/api/clients/${userId}`,
+            "PUT",
+            userData
+        );
+
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error actualizando datos");
+        }
+
+        return response.data;
+    } catch (error) {
+        console.error("Error al actualizar cliente:", error);
+        throw error;
+    }
+}
