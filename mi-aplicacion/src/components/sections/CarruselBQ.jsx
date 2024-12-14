@@ -15,31 +15,46 @@ function CarruselBQ({ images }) {
 
     return (
         <div className="carousel-section">
-            <div className="carousel-container">
-                <Button
-                    id="left-arrow"
-                    onClick={() => {
-                        prevSlide();
-                    }}
-                    children={<NavigateBeforeOutlinedIcon />}
-                ></Button>
-                <img src={images[currentIndex]} alt="" />
-                <Button
-                    id="right-arrow"
-                    onClick={() => {
-                        nextSlide();
-                    }}
-                    children={<NavigateNextOutlinedIcon />}
-                ></Button>
+            <div className="top-div">
+                <h5>· Basque Country</h5>
             </div>
-            <div className="discover">
-                <Button
-                    id="discover-button"
-                    onClick={() => {}}
-                    children={
-                        "Discover the beauty and magic of the Basque Country"
-                    }
-                ></Button>
+            <div id="first-div">
+                <div id="third-div">
+                    <h3 id="discover">DISCOVER THE</h3>
+                    <h3 id="basque-country">BASQUE COUNTRY</h3>
+                    <p>
+                        We believe travel is worth taking time over; that a
+                        great holiday means getting under the skin of a place,
+                        meeting its people, indulging in its culture and
+                        understanding its history and customs.
+                    </p>
+
+                    <Button
+                        onClick={() => {}}
+                        children={
+                            "SEE THE BEAUTY AND MAGIC OF THE BASQUE COUNTRY --->"
+                        }
+                    ></Button>
+                </div>
+                <div id="second-div">
+                    <div className="carousel-container">
+                        <Button
+                            id="left-arrow"
+                            onClick={() => {
+                                prevSlide();
+                            }}
+                            children={<NavigateBeforeOutlinedIcon />}
+                        ></Button>
+                        <img src={images[currentIndex]} alt="" />
+                        <Button
+                            id="right-arrow"
+                            onClick={() => {
+                                nextSlide();
+                            }}
+                            children={<NavigateNextOutlinedIcon />}
+                        ></Button>
+                    </div>
+                </div>
             </div>
         </div>
     );
