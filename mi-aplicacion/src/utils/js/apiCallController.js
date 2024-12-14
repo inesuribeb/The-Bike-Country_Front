@@ -145,24 +145,19 @@ export async function getMyBookings() {
 
 export async function clientRegister(body) {
     try {
-        
         const response = await fetchData(
             "client/api/clients/register",
             "POST",
             body
         );
 
-        if (!response || !response.token) {
-            throw new Error("Login failed: token not received");
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error en el registro");
         }
 
-        localStorage.setItem("authToken", response.token);
-        localStorage.setItem("authUserId", response.user_id);
-
-        return response.token;
     } catch (error) {
         console.error("Error al obtener el register:", error);
-        return null;
+        throw error;
     }
 }
 

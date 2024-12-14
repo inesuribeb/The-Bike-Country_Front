@@ -2,21 +2,22 @@ import React, { useState, useContext } from 'react';
 import './RegistrationForm.css';
 import { clientRegister } from '../../utils/js/apiCallController';
 import { PageContext } from "../../utils/js/context/PageContext";
-
+import CountryAutocomplete from './CountryAutocomplete';
 
 
 
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    surname: '',
-    country: '',
-    email: '',
-    phone: '',
-    password: '',
-    passwordConfirm: '',
-    dni: '',
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+    password: "",
+    passwordConfirm: "",
+    dni: "",
+    address: "",
+    country_id: "",
   });
   const [focusedField, setFocusedField] = useState(null);
 
@@ -44,20 +45,23 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (formData.password !== formData.passwordConfirm) {
-        alert('Las contraseñas no coinciden');
-        return;
+      alert('Las contraseñas no coinciden');
+      return;
     }
 
-    const result = await clientRegister(formData);
-    console.log('Resultado del registro:', result); 
-    
-    if (result && result.success) {  
-        alert('Registro exitoso! Por favor, inicia sesión.');
-        handlePage('auth');
-    } else {
-        alert('Error en el registro: ' + (result?.error || 'Error desconocido'));
+    try {
+      const result = await clientRegister(formData);
+      console.log('Resultado del registro:', result);
+      
+      // El registro fue exitoso
+      alert('Registro exitoso! Por favor, inicia sesión.');
+      handlePage('auth');
+      
+    } catch (error) {
+      // Manejar el error
+      alert('Error en el registro: ' + (error.message || 'Error desconocido'));
     }
 };
 
@@ -68,7 +72,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'name' || formData.name) && (
-              <label 
+              <label
                 htmlFor="name"
                 className={focusedField === 'name' || formData.name ? 'active-label' : ''}
               >
@@ -92,7 +96,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'surname' || formData.surname) && (
-              <label 
+              <label
                 htmlFor="surname"
                 className={focusedField === 'surname' || formData.surname ? 'active-label' : ''}
               >
@@ -113,34 +117,17 @@ const RegistrationForm = () => {
           </div>
         </div>
 
-        <div className="form-group">
-          <div className="input-container">
-            {(focusedField === 'country' || formData.country) && (
-              <label 
-                htmlFor="country"
-                className={focusedField === 'country' || formData.country ? 'active-label' : ''}
-              >
-                COUNTRY
-              </label>
-            )}
-            <input
-              type="text"
-              name="country"
-              id="country"
-              value={formData.country}
-              onChange={handleChange}
-              onFocus={() => handleFocus('country')}
-              onBlur={handleBlur}
-              placeholder={focusedField === 'country' ? '' : 'COUNTRY'}
-              required
-            />
-          </div>
-        </div>
+        <CountryAutocomplete
+          value={formData.country}
+          onChange={handleChange}
+          onFocus={() => handleFocus('country_id')}
+          onBlur={handleBlur}
+        />
 
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'email' || formData.email) && (
-              <label 
+              <label
                 htmlFor="email"
                 className={focusedField === 'email' || formData.email ? 'active-label' : ''}
               >
@@ -164,7 +151,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'phone' || formData.phone) && (
-              <label 
+              <label
                 htmlFor="phone"
                 className={focusedField === 'phone' || formData.phone ? 'active-label' : ''}
               >
@@ -188,7 +175,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'password' || formData.password) && (
-              <label 
+              <label
                 htmlFor="password"
                 className={focusedField === 'password' || formData.password ? 'active-label' : ''}
               >
@@ -212,7 +199,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'passwordConfirm' || formData.passwordConfirm) && (
-              <label 
+              <label
                 htmlFor="passwordConfirm"
                 className={focusedField === 'passwordConfirm' || formData.passwordConfirm ? 'active-label' : ''}
               >
@@ -236,7 +223,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'dni' || formData.dni) && (
-              <label 
+              <label
                 htmlFor="dni"
                 className={focusedField === 'dni' || formData.dni ? 'active-label' : ''}
               >
@@ -260,7 +247,7 @@ const RegistrationForm = () => {
         <div className="form-group">
           <div className="input-container">
             {(focusedField === 'address' || formData.address) && (
-              <label 
+              <label
                 htmlFor="address"
                 className={focusedField === 'address' || formData.address ? 'active-label' : ''}
               >
@@ -287,9 +274,9 @@ const RegistrationForm = () => {
       </form>
     </div>
 
-    
 
-    
+
+
   );
 };
 
