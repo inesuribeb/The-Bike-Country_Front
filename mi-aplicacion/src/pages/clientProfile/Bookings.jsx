@@ -11,14 +11,15 @@ function Bookings() {
         async function loadBookings() {
             try {
                 const response = await getMyBookings();
-                setBookings(response?.data || []);
+                setBookings(response || []); // Quitamos el .data
                 setLoading(false);
             } catch (err) {
+                console.error('Error detallado:', err);
                 setError('Error loading bookings');
                 setLoading(false);
             }
         }
-
+    
         loadBookings();
     }, []);
 
