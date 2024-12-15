@@ -85,7 +85,7 @@ function Details() {
     ];
 
     return (
-        <div className="details-container">
+        <div id="details-section" className="details-container">
             <div className="details-section">
                 <h2 className="details-title">What's included?</h2>
                 <div className="details-list">
