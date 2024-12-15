@@ -3,59 +3,82 @@ import "./ExperiencesPacks.css"
 import './InfoHeader.css';
 import { useState, useEffect } from 'react';
 import { obtenerPacks } from '../../utils/js/apiCallController';
+import { createReservation } from '../../utils/js/apiCallController';
 
 
+//         imageUrl: "https://i.ibb.co/6m8J14q/mapa1.webp",
+//         imageUrl: "https://i.ibb.co/ZHDvQtF/mapa2.webp",
+//         imageUrl: "https://i.ibb.co/wB7mcxM/mapa3.webp",
 
-const experiences=[
-    {
-        pack_id: 1,
-        imageUrl: "https://i.ibb.co/6m8J14q/mapa1.webp",
-        title: "From France to Navarra",
-        duration: "6 days"
-    },
-    {
-        pack_id: 2,
-        imageUrl: "https://i.ibb.co/ZHDvQtF/mapa2.webp",
-        title: "From San Sebastian to St Jean Pied de Port",
-        duration: "7 days"
-    },
-    {
-        pack_id: 3,
-        imageUrl: "https://i.ibb.co/wB7mcxM/mapa3.webp",
-        title: "Guipuzcoa tour",
-        duration: "8 days"
-    },
-]
 
 function ExperiencesPacks() {
+    const [experiences, setExperiences] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const handleReserve = async (reservationData) => {
+        try {
+            const response = await createReservation(reservationData);
+            alert("Reservation created successfully!");
+            return response; 
+
+        } catch (error) {
+            if (error.message.includes('401')) {
+                throw error; 
+            } else {
+                alert("Error creating reservation: " + error.message);
+            }
+        }
+    };
+
+    useEffect(() => {
+        async function loadPacks() {
+            try {
+                const data = await obtenerPacks();
+                setExperiences(data);
+                setLoading(false);
+            } catch (err) {
+                setError('Error loading experiences');
+                setLoading(false);
+            }
+        }
+
+        loadPacks();
+    }, []);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
+
     return (
         <>
-        <div className="info-header">
-            <div className="info-header__item">
-                <h5 className="info-header__label">When to go</h5>
-                <h4 className="info-header__value">At any season</h4>
+            <div className="info-header">
+                <div className="info-header__item">
+                    <h5 className="info-header__label">When to go</h5>
+                    <h4 className="info-header__value">At any season</h4>
+                </div>
+                <div className="info-header__item">
+                    <h5 className="info-header__label">Price from</h5>
+                    <h4 className="info-header__value">From 7.000€</h4>
+                    <h5 className="info-header__included">What's included?</h5>
+                </div>
+                <div className="info-header__item">
+                    <h5 className="info-header__label">Duration</h5>
+                    <h4 className="info-header__value">5 - 7 nights</h4>
+                </div>
+                <div className="info-header__item">
+                    <h5 className="info-header__label">Private Journeys</h5>
+                    <h4 className="info-header__value">Enquire now</h4>
+                </div>
             </div>
-            <div className="info-header__item">
-                <h5 className="info-header__label">Price from</h5>
-                <h4 className="info-header__value">From 7.000€</h4>
-                <h5 className="info-header__included">What's included?</h5>
-            </div>
-            <div className="info-header__item">
-                <h5 className="info-header__label">Duration</h5>
-                <h4 className="info-header__value">5 - 7 nights</h4>
-            </div>
-            <div className="info-header__item">
-                <h5 className="info-header__label">Private Journeys</h5>
-                <h4 className="info-header__value">Enquire now</h4>
-            </div>
-        </div>
             <div className="experiences-container">
                 {experiences.map((experience) => (
                     <ExperienceCard
                         key={experience.pack_id}
-                        imageUrl={experience.imageUrl}
-                        title={experience.title}
+                        imageUrl={experience.image_url}
+                        title={experience.name}
                         days={experience.duration}
+                        experience={experience}
+                        onReserve={handleReserve}
                     />
                 ))}
             </div>
@@ -64,64 +87,3 @@ function ExperiencesPacks() {
 }
 
 export default ExperiencesPacks;
-
-
-// function ExperiencesPacks() {
-//     const [experiences, setExperiences] = useState([]);
-//     const [loading, setLoading] = useState(true);
-//     const [error, setError] = useState(null);
-
-//     useEffect(() => {
-//         async function loadPacks() {
-//             try {
-//                 const data = await obtenerPacks();
-//                 setExperiences(data);
-//                 setLoading(false);
-//             } catch (err) {
-//                 setError('Error loading experiences');
-//                 setLoading(false);
-//             }
-//         }
-
-//         loadPacks();
-//     }, []);
-
-//     if (loading) return <div>Loading...</div>;
-//     if (error) return <div>{error}</div>;
-
-//     return (
-//         <>
-//             <div className="info-header">
-//                 <div className="info-header__item">
-//                     <h5 className="info-header__label">When to go</h5>
-//                     <h4 className="info-header__value">At any season</h4>
-//                 </div>
-//                 <div className="info-header__item">
-//                     <h5 className="info-header__label">Price from</h5>
-//                     <h4 className="info-header__value">From 7.000€</h4>
-//                     <h5 className="info-header__included">What's included?</h5>
-//                 </div>
-//                 <div className="info-header__item">
-//                     <h5 className="info-header__label">Duration</h5>
-//                     <h4 className="info-header__value">5 - 7 nights</h4>
-//                 </div>
-//                 <div className="info-header__item">
-//                     <h5 className="info-header__label">Private Journeys</h5>
-//                     <h4 className="info-header__value">Enquire now</h4>
-//                 </div>
-//             </div>
-//             <div className="experiences-container">
-//                 {experiences.map((experience) => (
-//                     <ExperienceCard
-//                         key={experience.id} 
-//                         imageUrl={experience.image_url}
-//                         title={experience.name} 
-//                         days={experience.duration} 
-//                     />
-//                 ))}
-//             </div>
-//         </>
-//     );
-// }
-
-// export default ExperiencesPacks;

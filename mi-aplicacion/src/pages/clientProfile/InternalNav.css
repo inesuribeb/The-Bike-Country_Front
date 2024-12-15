@@ -1,5 +1,7 @@
 .internal-nav {
     width: 100%;
+    box-sizing: border-box;
+
   }
   
   .internal-nav ul {
@@ -23,12 +25,14 @@
     color: #666;
     border: none;
     transition: color 0.3s ease;
+    outline: none; 
+    text-transform: none !important;
   }
   
   .internal-nav li.active button {
-    color: black; /*no esta sirviendo*/
+    color: 666; /*no esta sirviendo*/
   }
   
   .internal-nav button:hover {
-    color: white;
+    color: #666;
   }
