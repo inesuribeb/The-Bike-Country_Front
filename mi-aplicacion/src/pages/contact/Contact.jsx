@@ -23,9 +23,10 @@ function Contact() {
                 <NavBar></NavBar>
             </header>
             <main>
+            <div></div>
                 <div className ="contact-container">
                     <div className="contact-page">
-                        <h1>Contact Us</h1>
+                        <h1>CONTACT US</h1>
                     </div>
                     <div className="form">
                         <ContactForm

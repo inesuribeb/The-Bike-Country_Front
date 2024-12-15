@@ -1,3 +1,8 @@
+.form{
+  margin-top: 130px;
+}
+
+
 .input-section,
 .input-mesage {
   display: flex;
