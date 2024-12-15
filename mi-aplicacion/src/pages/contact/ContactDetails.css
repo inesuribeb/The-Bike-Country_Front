@@ -35,15 +35,18 @@
 .contact-details-item__header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+  width: 100%;
 }
-
 .contact-details-item__text {
     font-size: 16px;
     margin: 0;
+    flex-grow: 1; /* El texto ocupa todo el espacio disponible */
+    line-height: 1.5; /* Asegura que se vea ordenado */
 }
 
 .contact-details-item__description {
+    flex-basis: 100%; 
     padding: 10px 0;
     font-size: 14px;
     color: #666;
@@ -63,4 +66,10 @@
     .details-container {
         flex-direction: column;
     }
+}
+
+.dropdown-contact {
+    margin-left: 10px; /* Ajusta el margen del botón */
+    display: flex;
+    align-items: center;
 }

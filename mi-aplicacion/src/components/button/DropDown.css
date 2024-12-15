@@ -1,0 +1,39 @@
+.dropdown-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 15px;
+}
+
+.dropdown-text {
+  font-size: 16px;
+  margin: 0;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.dropdown-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: black;
+}
+
+.dropdown-button--open {
+  background-color: #4d8d5f;
+  color: white;
+}
+
+.dropdown-content {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
