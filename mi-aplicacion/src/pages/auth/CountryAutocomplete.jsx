@@ -16,7 +16,6 @@ const CountryAutocomplete = ({ value, onChange, onFocus, onBlur, className = ''}
             const data = await getAllCountries();
             if (data) {
               setCountries(data);
-              // Si hay un value inicial, mostrar el nombre del país
               if (value) {
                 const selectedCountry = data.find(country => country.country_id === value);
                 if (selectedCountry) {

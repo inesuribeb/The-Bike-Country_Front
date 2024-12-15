@@ -55,12 +55,10 @@ const RegistrationForm = () => {
       const result = await clientRegister(formData);
       console.log('Resultado del registro:', result);
       
-      // El registro fue exitoso
       alert('Registro exitoso! Por favor, inicia sesión.');
       handlePage('auth');
       
     } catch (error) {
-      // Manejar el error
       alert('Error en el registro: ' + (error.message || 'Error desconocido'));
     }
 };
