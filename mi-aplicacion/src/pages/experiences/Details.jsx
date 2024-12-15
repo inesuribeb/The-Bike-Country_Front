@@ -86,8 +86,8 @@ function Details() {
 
     return (
         <div id="details-section" className="details-container">
-            <div className="details-section">
-                <h2 className="details-title">What's included?</h2>
+            <div className="details-section-included">
+                <h2 className="details-title">WHAT'S INCLUDED?</h2>
                 <div className="details-list">
                     {includedItems.map((item) => (
                         <div key={item.id} className="details-item">
@@ -100,8 +100,8 @@ function Details() {
                 </div>
             </div>
 
-            <div className="details-section">
-                <h2 className="details-title">Extras</h2>
+            <div className="details-section-extras">
+                <h2 className="details-title">ADDITIONAL SERVICES</h2>
                 <div className="details-list">
                     {extrasItems.map((item) => (
                         <div key={item.id} className="details-item">
