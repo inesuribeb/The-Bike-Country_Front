@@ -31,6 +31,13 @@ function ExperiencesPacks() {
         }
     };
 
+    const scrollToDetails = () => {
+        const detailsSection = document.getElementById('details-section');
+        if (detailsSection) {
+            detailsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     useEffect(() => {
         async function loadPacks() {
             try {
@@ -59,7 +66,13 @@ function ExperiencesPacks() {
                 <div className="info-header__item">
                     <h5 className="info-header__label">Price from</h5>
                     <h4 className="info-header__value">From 7.000€</h4>
-                    <h5 className="info-header__included">What's included?</h5>
+                    <h5 
+                        className="info-header__included"
+                        onClick={scrollToDetails}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        What's included?
+                    </h5>
                 </div>
                 <div className="info-header__item">
                     <h5 className="info-header__label">Duration</h5>
