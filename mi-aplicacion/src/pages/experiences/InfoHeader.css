@@ -3,8 +3,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
-    /* background-color: #F8ECEC;   */
-    background-color: #FED920; 
+    background-color: #FEFF00; 
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -30,20 +29,21 @@
 }
 
 .info-header__included {
-    font-size: 14px;
+    font-size: 12px;
     color: #333;
     margin: 5px 0;
     text-decoration: underline;
     cursor: pointer;
 }
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .info-header {
         flex-direction: column;
         gap: 20px;
     }
 
+
     .info-header__item {
         width: 100%;
     }
+
 }

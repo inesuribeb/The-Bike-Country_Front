@@ -145,24 +145,19 @@ export async function getMyBookings() {
 
 export async function clientRegister(body) {
     try {
-        
         const response = await fetchData(
             "client/api/clients/register",
             "POST",
             body
         );
 
-        if (!response || !response.token) {
-            throw new Error("Login failed: token not received");
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error en el registro");
         }
 
-        localStorage.setItem("authToken", response.token);
-        localStorage.setItem("authUserId", response.user_id);
-
-        return response.token;
     } catch (error) {
         console.error("Error al obtener el register:", error);
-        return null;
+        throw error;
     }
 }
 
@@ -178,5 +173,83 @@ export async function getAllCountries() {
         return response.data;
     } catch (error) {
         console.error("Error al obtener los países:", error);
+    }
+}
+
+export async function cancelBooking(bookingId, userId, packId) {
+    try {
+        const body = {
+            user_id: userId,
+            pack_id: packId
+        };
+
+        const response = await fetchData(
+            `reservations/api/reservations/${bookingId}/cancel`, 
+            "PUT",
+            body
+        );
+
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error al cancelar la reserva");
+        }
+
+        return response;
+
+    } catch (error) {
+        console.error("Error al cancelar la reserva:", error);
+        throw error;
+    }
+}
+
+export async function updateClient(userId, userData) {
+    try {
+        const response = await fetchData(
+            `client/api/clients/${userId}/update`,
+            "PUT",
+            userData
+        );
+
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error actualizando datos");
+        }
+
+        return response.data;
+    } catch (error) {
+        console.error("Error al actualizar cliente:", error);
+        throw error;
+    }
+}
+
+export async function createReservation(body) {
+    try {
+        console.log("Enviando reserva:", body);
+        const response = await fetchData(
+            "reservations/api/reservations/create", 
+            "POST",
+            body
+        );
+
+        if (!response || !response.success) {
+            throw new Error(response?.message || "Error al crear la reserva");
+        }
+
+        return response.data;
+    } catch (error) {
+        console.error("Error al crear la reserva:", error);
+        throw error;
+    }
+}
+
+export async function getAllSources() {
+    try {
+        const response = await fetchData(
+            "source/api/sources/",
+            "GET",
+            null
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error al obtener las sources:", error);
+        throw error; 
     }
 }

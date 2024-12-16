@@ -23,22 +23,23 @@ function Contact() {
                 <NavBar></NavBar>
             </header>
             <main>
-                <div className ="contact-container">
-                    <div className="contact-page">
-                        <h1>Contact Us</h1>
-                    </div>
-                    <div className="form">
-                        <ContactForm
-                            initialClient={client}
-                            onSubmit={setClient}
-                        />
-                    </div>
+                <div>
+                <h1 className="contact-title">CONTACT US</h1>
+                    <div className="contact-container">
+                        <div className="contact-page">
+                        </div>
+                        <div className="form">
+                            <ContactForm
+                                initialClient={client}
+                                onSubmit={setClient}
+                            />
+                        </div>
 
+                    </div>
+                    <div className="contact-details-container">
+                        <ContactDetails />
+                    </div>
                 </div>
-                <div className="contact-details-container">
-                <ContactDetails />
-                </div>
-
             </main>
 
         </>

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { obtenerPacks } from "../../utils/js/apiCallController";
 import "./Formulario.css";
 function ContactForm({ initialClient, onSubmit }) {
     const [client, setClient] = useState(initialClient);
@@ -7,6 +8,23 @@ function ContactForm({ initialClient, onSubmit }) {
         const { name, value } = e.target;
         setClient(oldClient => ({ ...oldClient, [name]: value }));
     }*/
+
+    const [experiences, setExperiences] = useState([]);
+
+    useEffect(() => {
+        async function loadPacks() {
+            try {
+                const data = await obtenerPacks();
+                setExperiences(data);
+
+            } catch (err) {
+                setError('Error loading experiences');
+
+            }
+        }
+
+        loadPacks();
+    }, []);
 
     function handleFirstName(e) {
         const newFirstName = e.target.value;
@@ -153,42 +171,23 @@ function ContactForm({ initialClient, onSubmit }) {
                 </div>
             </div>
             <div className="form-group">
-                <label>Which experience are you interested in? <required>*</required></label>
+                <label >Which experience are you interested in? <required>*</required></label>
                 <div className="radio-group" >
-                    <div class="radio-option">
-                        <input
-                            type="radio"
-                            name="experience"
-                            value="Experience 1"
-                            checked={client.experience === "Experience 1"}
-                            onChange={handleExperience}
-                        />
-                        <label for="experience1">Experience 1</label>
-                    </div>
-                    <div className="radio-option">
-                        <input
-                            type="radio"
-                            name="experience"
-                            value="Experience 2"
-                            checked={client.experience === "Experience 2"}
-                            onChange={handleExperience}
-                        />
-
-                        <label for="experience2">Experience 2</label>
-                    </div>
-                    <div className="radio-option">
-                        <input
-                            type="radio"
-                            name="experience"
-                            value="Experience 3"
-                            checked={client.experience === "Experience 3"}
-                            onChange={handleExperience}
-                        />
-                        <label for="experience3">Experience 3</label>
-                        
-                    </div>
+                    {experiences.map((experience) => (
+                        <div class="radio-option" key={experience.id}>
+                            <input 
+                                type="radio"
+                                id={`experience-${experience.id}`}
+                                name="experience"
+                                value={experience.id}
+                                checked={experience.id}
+                                onChange={handleExperience}
+                            />
+                            <label htmlFor={`experience-${experience.id}`}>{experience.name}</label>
+                        </div>
+                    ))}
+            
                 </div>
-
 
                 <div className="input-select-option">
                     <label htmlFor="hearAboutUs">How did you hear about us?</label>

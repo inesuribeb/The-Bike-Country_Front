@@ -1,12 +1,19 @@
+
 .experience-card {
-    background-color: #E8F3E8;
-    border-radius: 8px;
+    background-color: black;
+    border-radius: 0px;
     padding: 20px;
-    width: 100%;    display: flex;
+    display: flex; 
     flex-direction: column;
     align-items: center;
     gap: 15px;
     box-sizing: border-box;
+    border: 1px solid #202020;
+    width: 100%; 
+    max-width: 350px;
+    margin: 0 auto; 
+    align-items: center; 
+    justify-content: center;
 }
 
 .experience-card__image-container {
@@ -15,16 +22,22 @@
     border-radius: 50%;
     overflow: hidden;
     background-color: white;
+    border: 3px solid #FEFF00;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .experience-card__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 }
 
 .experience-card__info {
     text-align: center;
+    color: white;
 }
 
 .experience-card__title {
@@ -38,16 +51,24 @@
 }
 
 .experience-card__button {
-    /* background-color: #F4A460; */
-    background-color: #FED920;
-    border: none;
-    border-radius: 25px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0px;
     padding: 10px 30px;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    width: 60%;
+    display: block; 
+    margin: 0 auto; 
+    text-align: center; 
 }
 
 .experience-card__button:hover {
     opacity: 0.9;
 }
+
+.experience-card__button::-moz-focus-inner {
+    border: 0;
+}
+

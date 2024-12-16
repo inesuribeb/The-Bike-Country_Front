@@ -1,72 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import { getMyBookings } from '../../utils/js/apiCallController'
+import { getMyBookings } from '../../utils/js/apiCallController';
+import './Bookings.css';
+import { cancelBooking } from '../../utils/js/apiCallController';
+import FavoriteButton from "../../components/button/FavoriteButton";
 
-// function Bookings ({reservation}){
-//     const bookings = [
-//         {
-//         id:1,
-//         pack: {
-//             name: "Premium Pack",
-//             price: 4999,
-//             duration: 90
-//         },
-//         status: "required",
-//         application_date: "5 de diciembre de 2024",
-//         message: "Interesado en el pack premium",
-//         requested_dates: "15 de diciembre de 2024",
-//         source: "Google Search",
-//         },
-//         {
-//             id:2,
-//             pack: {
-//                 name: "Premium Pack",
-//                 price: 4999,
-//                 duration: 90
-//             },
-//             status: "required",
-//             application_date: "5 de diciembre de 2024",
-//             message: "Interesado en el pack premium",
-//             requested_dates: "15 de diciembre de 2024",
-//             source: "Google Search",
-//             }
-//     ];
-
-//     return (
-//         <>
-//             <div>
-//                 <h3>Here are your bookings:</h3>
-//                 {bookings.map((booking) => (                 
-//                         <div key={booking.id}>
-//                 <p>{booking.pack.name}</p>
-//                 <p>EUR {booking.pack.price}</p>
-//                 <p>{booking.pack.duration}</p>
-//                 <p>{booking.status}</p>
-//                 <p>{booking.application_date}</p>
-//                 <p>{booking.message}</p>
-//                 <p>{booking.requested_dates}</p>
-//                 <p>{booking.source}</p>
-//                         </div>
-//                 ))}
-               
-//             </div>  
-//         </>
-//     );
-// }
-
-// export default Bookings;
 
 function Bookings() {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [favorites, setFavorites] = useState([]);
+
+
+    const handleFavoriteToggle = (booking, isFavorite) => {
+        let updatedFavorites;
+
+        if (isFavorite) {
+            updatedFavorites = [...favorites, booking]; // Agregar el objeto de reserva
+        } else {
+            updatedFavorites = favorites.filter((fav) => fav.id !== booking.id); // Filtrar por ID
+        }
+
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Guardar en localStorage
+    };
+
+    useEffect(() => {
+        const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        setFavorites(savedFavorites);
+    }, []);
+
+    // Guardar favoritos en localStorage cada vez que cambien
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }, [favorites]);
+
+
+
+    const handleCancelBooking = async (booking) => {
+        try {
+            await cancelBooking(booking.id, booking.user_id, booking.pack_id);
+            const response = await getMyBookings();
+            setBookings(response || []);
+        } catch (error) {
+            console.error('Error al cancelar la reserva:', error);
+            setError('No se pudo cancelar la reserva');
+        }
+    };
 
     useEffect(() => {
         async function loadBookings() {
             try {
-                const data = await getMyBookings();
-                setBookings(data);
+                const response = await getMyBookings();
+                setBookings(response || []);
                 setLoading(false);
             } catch (err) {
+                console.error('Error detallado:', err);
                 setError('Error loading bookings');
                 setLoading(false);
             }
@@ -77,20 +66,54 @@ function Bookings() {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
-    if (!bookings.length) return <div>No bookings available</div>;
+    if (!bookings.length) return <div>No bookings yet.</div>;
+
+
 
     return (
-        <div>
-            <h3>Here are your bookings:</h3>
+        <div className="bookings-content">
+            <div className="bookings-header">
+                <div className='color'></div>
+                <h3>My bookings</h3>
+            </div>
             {bookings.map((booking) => (
-                <div key={booking.id}>
-                    <p>Experience: {booking.pack.name}</p>
-                    <p>EUR {booking.pack.price}</p>
-                    <p>Duration: {booking.pack.duration}</p>
-                    <p>Status: {booking.status}</p>
-                    <p>Application date: {booking.application_date}</p>
-                    <p>Your message: {booking.message}</p>
-                    <p>Requested dates: {booking.requested_dates}</p>
+                <div key={booking.id} className="booking-item">
+                    <div className='orderRef'>
+                        <h5>Orders</h5>
+                        <p>Ref: {booking.id}</p>
+                        <p>on {booking.application_date}</p>
+                        <FavoriteButton
+                            bookingId={booking.id}
+                            isFavorite={favorites.some((fav) => fav.id === booking.id)} // Compara objetos
+                            onFavoriteToggle={(isFavorite) => handleFavoriteToggle(booking, isFavorite)}
+                        />
+                    </div>
+                    <div className='orderDetails'>
+                        <h5>Details</h5>
+                        <p>{booking.pack.name}</p>
+                        <p>{booking.pack.duration} days</p>
+                        <p>Requested dates: {booking.requested_dates}</p>
+                    </div>
+                    <div className='total'>
+                        <h5>Total</h5>
+                        <p>EUR {booking.pack.price}</p>
+                        {/* <p>Your message: {booking.message}</p> */}
+                    </div>
+                    <div className='status'>
+                        <h5>STATUS</h5>
+                        <p>{booking.status}</p>
+                    </div>
+                    <div className='actions'>
+                        <h5>Actions</h5>
+                        {booking.status !== 'cancelled' && booking.status !== 'completed' && (
+                            <button
+                                onClick={() => handleCancelBooking(booking)}
+                                className='cancel-button'
+                            >
+                                CANCEL
+                            </button>
+                        )}
+                    </div>
                 </div>
             ))}
         </div>
