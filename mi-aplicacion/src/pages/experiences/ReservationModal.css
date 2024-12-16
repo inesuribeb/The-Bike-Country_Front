@@ -35,8 +35,9 @@
 
 .modal-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 10px;
+    /* right: 16px; */
+    left: 190px;
     background: transparent;
     border: none;
     font-size: 20px;
@@ -52,7 +53,7 @@
 .modal-title {
     margin-bottom: 24px;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 800;
     color: #111;
 }
 
@@ -65,7 +66,7 @@
 .form-label {
     display: block;
     margin-bottom: 6px;
-    font-weight: 500;
+    font-weight: 800;
     color: #374151;
     font-size: 0.95rem;
 }
@@ -77,11 +78,12 @@
     padding: 10px 12px;
     margin-top: 6px;
     border: 1.5px solid #e5e7eb;
-    border-radius: 8px;
+    border-radius: 0px;
     font-size: 0.95rem;
     transition: all 0.2s ease;
     background-color: #f9fafb;
     color: #111;
+    box-sizing: border-box;
 }
 
 .form-select:focus,
@@ -104,7 +106,7 @@
     background-color: #18181b;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 0.95rem;
     font-weight: 500;
