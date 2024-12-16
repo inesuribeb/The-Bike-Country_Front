@@ -2,7 +2,7 @@ import { useState } from "react";
 import ReservationModal from "./ReservationModal";
 import "./ExperienceCard.css"
 
-function ExperienceCard({ title, days, imageUrl, experience, onReserve }) {
+function ExperienceCard({ title, days, imageUrl, experience, onReserve, children }) {
     const [isModalOpen, setModalOpen] = useState(false);
     const userId = localStorage.getItem("authUserId"); 
 
@@ -23,6 +23,7 @@ function ExperienceCard({ title, days, imageUrl, experience, onReserve }) {
             </div>
             <div className="experience-card__info">
                 <h5 className="experience-card__title">{title}</h5>
+                {children}
                 <p className="experience-card__days">{days} days</p>
             </div>
             <button className="experience-card__button" onClick={handleOpenModal}>
