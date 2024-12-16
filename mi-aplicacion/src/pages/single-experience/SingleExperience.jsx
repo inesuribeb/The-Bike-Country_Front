@@ -2,6 +2,8 @@
 import React from 'react';
 import DayDetails from './DayDetails';
 import NavBar from '../../components/navbar/NavBar'
+import './SingleExperience.css'
+
 
 function SingleExperience() {
 
@@ -10,7 +12,7 @@ function SingleExperience() {
             <header>
                 <NavBar></NavBar>
             </header>
-            <main>
+            <main className="experience-main">
                 <div className="carousel-section">
                     {/* Aquí iría tu componente Carousel */}
                 </div>
