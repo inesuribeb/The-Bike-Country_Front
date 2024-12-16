@@ -9,8 +9,9 @@ function MoreExperiences() {
                 <div className="more-experiences-container">
                     <div className="experience">
                         <img
-                            src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
+                            src="https://images-ext-1.discordapp.net/external/KPiscyF_oWdK5XauacdA2RcXr68bEGWCQ7xvrNnFgms/https/www.rawcyclingmag.com/wp-content/uploads/2022/06/Traka360_Training-Ride-12.jpg?format=webp&width=1410&height=940"
                             alt=""
+                            id="lumbalgia"
                         />
                         <h6>Pedal</h6>
                         <p>
