@@ -5,7 +5,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import React, { useState, useEffect, useContext } from "react";
 import { PageContext } from "../../utils/js/context/PageContext.js";
 import { obtenerPacks } from "../../utils/js/apiCallController.js";
-function NavBar() {
+function NavBar({ changeBackgroundColor = false }) {
     const maxHeight = 200;
     const minHeight = 100;
     const disableDelay = 300; // milliseconds
@@ -32,22 +32,24 @@ function NavBar() {
 
         let newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
         let fontColor = "rgba(255, 255, 255)";
-        if (position + minHeight > threshold * 4) {
-            newBackgroundColor = `rgba(255, 255, 0, ${newOpacity})`;
-            fontColor = "rgba(0, 0, 0)";
-            setNavbarClass("third-color");
-        } else if (position + minHeight > threshold * 3) {
-            newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
-            fontColor = "rgba(255, 255, 255)";
-            setNavbarClass("first-color");
-        } else if (position + minHeight > threshold * 2) {
-            newBackgroundColor = `rgba(255, 255, 255, ${newOpacity})`;
-            fontColor = "rgba(0, 0, 0)";
-            setNavbarClass("second-color");
-        } else if (position + minHeight > threshold) {
-            newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
-            fontColor = "rgba(255, 255, 255)";
-            setNavbarClass("first-color");
+        if (changeBackgroundColor) {
+            if (position + minHeight > threshold * 4) {
+                newBackgroundColor = `rgba(255, 255, 0, ${newOpacity})`;
+                fontColor = "rgba(0, 0, 0)";
+                setNavbarClass("third-color");
+            } else if (position + minHeight > threshold * 3) {
+                newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+                fontColor = "rgba(255, 255, 255)";
+                setNavbarClass("first-color");
+            } else if (position + minHeight > threshold * 2) {
+                newBackgroundColor = `rgba(255, 255, 255, ${newOpacity})`;
+                fontColor = "rgba(0, 0, 0)";
+                setNavbarClass("second-color");
+            } else if (position + minHeight > threshold) {
+                newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+                fontColor = "rgba(255, 255, 255)";
+                setNavbarClass("first-color");
+            }
         }
         setNavbarStyle({
             height: newHeight,
