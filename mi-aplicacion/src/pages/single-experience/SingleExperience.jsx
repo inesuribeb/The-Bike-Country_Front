@@ -1,19 +1,25 @@
 // import ImageCarousel from './ImageCarousel';
 import React from 'react';
 import DayDetails from './DayDetails';
+import NavBar from '../../components/navbar/NavBar'
 
 function SingleExperience() {
-    
+
     return (
         <div className="experience-page">
-          <div className="carousel-section">
-            {/* Aquí iría tu componente Carousel */}
-          </div>
-          <div className="details-section">
-            <DayDetails />
-          </div>
+            <header>
+                <NavBar></NavBar>
+            </header>
+            <main>
+                <div className="carousel-section">
+                    {/* Aquí iría tu componente Carousel */}
+                </div>
+                <div className="details-section">
+                    <DayDetails />
+                </div>
+            </main>
         </div>
-      );
+    );
 }
 
 export default SingleExperience;

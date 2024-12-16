@@ -1,5 +1,5 @@
 import React from 'react';
-import DropDown from './DropDown';
+import DropDown from "../../components/button/DropDown";
 import './DayDetails.css'
 
 const DayDetails = () => {

@@ -9,6 +9,7 @@ import Register from "./pages/auth/Register";
 import ClientProfile from "./pages/clientProfile/ClientProfile";
 import Stories from "./pages/stories/Stories";
 import FavoritesPage from "./pages/clientProfile/FavoritesPage";
+import SingleExperience from "./pages/single-experience/SingleExperience.jsx";
 import {
     obtenerPacks,
     workerLogin,
@@ -51,8 +52,8 @@ function App() {
         register: Register,
         clientProfile: ClientProfile,
         stories: Stories,
-        favoritesPage: FavoritesPage
-
+        favoritesPage: FavoritesPage,
+        singleExperience: SingleExperience
        
     };
     const Component = components[page];
