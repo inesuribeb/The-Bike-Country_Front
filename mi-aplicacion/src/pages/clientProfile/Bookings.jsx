@@ -50,7 +50,7 @@ function Bookings() {
             {bookings.map((booking) => (
                 <div key={booking.id} className="booking-item">
                     <div className='orderRef'>
-                        <h5>Orders</h5>
+                        <h5>Order</h5>
                         <p>Ref: {booking.id}</p>
                         <p>on {booking.application_date}</p>
                     </div>
