@@ -6,42 +6,10 @@ function LatestStories() {
             </div>
             <div id="first-div">
                 <div id="third-div">
-                    <h3 id="travel">TRAVEL</h3>
-                    <h3 id="consciously">CONSCIOUSLY</h3>
-                    <div>
-                        <div>
-                            <img
-                                src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
-                                alt=""
-                                width={400}
-                            />
-                            <h4>From France to Navarra</h4>
-                            <p>25/04/2023 - 30/04/2023</p>
-                        </div>
-                        <div>
-                            <img
-                                src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
-                                alt=""
-                                width={400}
-                            />
-                            <h4>From France to Navarra</h4>
-                            <p>25/04/2023 - 30/04/2023</p>
-                        </div>
-                        <div>
-                            <img
-                                src="https://www.papagayobike.com/images/blog/estrategias-de-recuperacion-para-ciclistas-descanso-estiramiento-y-mas-1.jpg"
-                                alt=""
-                                width={400}
-                            />
-                            <h4>From France to Navarra</h4>
-                            <p>25/04/2023 - 30/04/2023</p>
-                        </div>
-                    </div>
+                    <h3 id="latest">LATEST</h3>
+                    <h3 id="stories">STORIES</h3>
                 </div>
-            </div>
-            <div>
-                <h5>Lates Stories</h5>
-                <a href="">Read All Stories</a>
+                <div id="second-div"></div>
             </div>
         </div>
     );
