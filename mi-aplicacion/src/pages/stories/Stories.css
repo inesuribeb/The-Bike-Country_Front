@@ -26,9 +26,10 @@
     padding-bottom: 0px;
     font-size: 240px;
     color: #212121;
-    letter-spacing: 5px;
+    letter-spacing: 5vw;
     text-align: center;
-    transform: translateY(-25%);
+    transform: translateY(-20%);
+    font-weight: 400;
 }
 
 .intro-section {
