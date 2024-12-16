@@ -10,8 +10,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color-1: #FED920;
-  --color-2: #F8ECEC;
+  --color-1: rgb(255, 255, 84);
+  --color-2: #ffffff;
+  --color-3: #000000;
   --color-navBar: black;
   --font-color-navBar: white;
   --font-color-navBar-hover: #FED920;
