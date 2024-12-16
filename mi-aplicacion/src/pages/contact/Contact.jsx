@@ -24,7 +24,7 @@ function Contact() {
             </header>
             <main>
                 <div>
-                <h1 className="contact-title">CONTACT US</h1>
+                    <h1 className="contact-title">CONTACT US</h1>
                     <div className="contact-container">
                         <div className="contact-page">
                         </div>
@@ -36,10 +36,9 @@ function Contact() {
                         </div>
 
                     </div>
-                    <div className="contact-details-container">
-                        <ContactDetails />
-                    </div>
+                    <ContactDetails />
                 </div>
+
             </main>
 
         </>
