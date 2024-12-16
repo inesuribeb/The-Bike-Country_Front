@@ -15,6 +15,7 @@
 
 .details-section-extras {
     background-color: #e0e0e0;
+    color: var(--color-3);
 }
 
 .details-title {
@@ -27,9 +28,9 @@
 }
 
 .details-title span {
-    display: block; 
-    position: relative; 
-    padding-bottom: 10px; 
+    display: block;
+    position: relative;
+    padding-bottom: 10px;
 }
 
 .details-title span::after {
