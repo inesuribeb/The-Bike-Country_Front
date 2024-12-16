@@ -50,7 +50,7 @@ function ContactDetails() {
         }];
 
     /*function HandleDescription () {
-    
+
     }*/
 
     return (

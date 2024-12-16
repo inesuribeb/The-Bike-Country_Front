@@ -118,7 +118,7 @@ function NavBar() {
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a onClick={() => handleChangePage("favoritesPage")}>
                                 <FavoriteBorderOutlinedIcon />
                             </a>
                         </li>

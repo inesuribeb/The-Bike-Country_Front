@@ -1,0 +1,33 @@
+h2{
+    margin:0;
+}
+.my-favorites {
+    width: 100%;
+    margin-top:50px;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+}
+.my-favorites-tittle{
+
+    padding: 0.5rem 0;
+    width: 100%;
+    padding-left: 16px;
+    letter-spacing: 1.5px;
+    box-sizing: border-box;
+}
+
+.favorites-container{
+   margin-left: 20px;
+   margin-top:40px;
+}
+
+.favorites-container div {
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+    border-bottom: 1px dotted #ccc; 
+
+}
