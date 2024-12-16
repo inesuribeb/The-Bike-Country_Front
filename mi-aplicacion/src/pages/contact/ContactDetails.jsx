@@ -54,10 +54,12 @@ function ContactDetails() {
     }*/
 
     return (
-        <div className="contact-details-container">
+        <>
             <div>
-                <h1>FAQS</h1>
+                <h1 className="contact-title-h1">FAQS</h1>
             </div>
+        
+        <div className="contact-details-container">
             <div className="contact-details-section">
                 <h2 className="contact-details-title">Pricing & Financial</h2>
                 <div className="contact-details-list">
@@ -114,6 +116,7 @@ function ContactDetails() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
