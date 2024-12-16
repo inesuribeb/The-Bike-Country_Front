@@ -1,5 +1,11 @@
 import Button from "../button/Button";
+import { PageContext } from "../../utils/js/context/PageContext.js";
+import { useContext } from "react";
 function MoreExperiences() {
+    const { setPage } = useContext(PageContext);
+    const handleChangePage = (pageName) => {
+        setPage(pageName);
+    };
     return (
         <div className="more-experience-section">
             <div className="top-div">
@@ -49,7 +55,9 @@ function MoreExperiences() {
                 </div>
                 <div className="button-container">
                     <Button
-                        onClick={() => {}}
+                        onClick={() => {
+                            handleChangePage("experiences");
+                        }}
                         children={"ALL EXPERIENCES"}
                     ></Button>
                 </div>

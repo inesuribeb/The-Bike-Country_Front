@@ -23,15 +23,6 @@ function App() {
     const [packs, setPacks] = useState(null);
     //Pruebas de la api
     useEffect(() => {
-        async function getPacks() {
-            const data = await obtenerPacks();
-            console.log("Packs obtenidos:", data);
-            setPacks(data);
-        }
-        async function loginByWorker() {
-            const data = await workerLogin();
-            console.log("Token obtenido:", data);
-        }
         async function getClientProfile() {
             const data = await getMyProfile();
             console.log("Perfil obtenido:", data);
@@ -53,8 +44,7 @@ function App() {
         clientProfile: ClientProfile,
         stories: Stories,
         favoritesPage: FavoritesPage,
-        singleExperience: SingleExperience
-       
+        singleExperience: SingleExperience,
     };
     const Component = components[page];
     return (

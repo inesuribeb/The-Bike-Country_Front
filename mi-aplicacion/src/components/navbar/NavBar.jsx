@@ -4,6 +4,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 
 import React, { useState, useEffect, useContext } from "react";
 import { PageContext } from "../../utils/js/context/PageContext.js";
+import { obtenerPacks } from "../../utils/js/apiCallController.js";
 function NavBar() {
     const maxHeight = 200;
     const minHeight = 100;
@@ -12,11 +13,16 @@ function NavBar() {
     const [navbarStyle, setNavbarStyle] = useState({
         height: maxHeight,
         background: `rgba(0, 0, 0, 0.5)`,
+        "border-bottom": "2px solid rgba(255, 255, 255, 1)",
     });
+    const [navbarClass, setNavbarClass] = useState(""); // Clase inicial
+
     const [isExperiencesVisible, setIsExperiencesVisible] = useState(false);
     const { setPage } = useContext(PageContext);
 
     const handleScroll = () => {
+        const viewportHeight = window.innerHeight;
+        const threshold = viewportHeight * 0.9;
         const position = window.scrollY;
         const newHeight = Math.max(minHeight, maxHeight - position);
         const heightDifference = maxHeight - minHeight;
@@ -24,14 +30,44 @@ function NavBar() {
         const newOpacity =
             1 - ((newHeight - minHeight) / heightDifference) * (1 - 0.5);
 
+        let newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+        let fontColor = "rgba(255, 255, 255)";
+        if (position + minHeight > threshold * 4) {
+            newBackgroundColor = `rgba(255, 255, 0, ${newOpacity})`;
+            fontColor = "rgba(0, 0, 0)";
+            setNavbarClass("third-color");
+        } else if (position + minHeight > threshold * 3) {
+            newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+            fontColor = "rgba(255, 255, 255)";
+            setNavbarClass("first-color");
+        } else if (position + minHeight > threshold * 2) {
+            newBackgroundColor = `rgba(255, 255, 255, ${newOpacity})`;
+            fontColor = "rgba(0, 0, 0)";
+            setNavbarClass("second-color");
+        } else if (position + minHeight > threshold) {
+            newBackgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+            fontColor = "rgba(255, 255, 255)";
+            setNavbarClass("first-color");
+        }
         setNavbarStyle({
             height: newHeight,
-            background: `rgba(0, 0, 0, ${newOpacity})`,
+            background: newBackgroundColor,
+            "border-bottom": `2px solid ${fontColor}`,
         });
     };
-
+    const [experiences, setExperiences] = useState([]);
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        async function loadPacks() {
+            try {
+                const data = await obtenerPacks();
+                setExperiences(data);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        loadPacks();
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -63,16 +99,17 @@ function NavBar() {
                     </a>
                     <ul>
                         <li>
-                            <a>About Us</a>
+                            <a className={navbarClass}>About Us</a>
                         </li>
                         <li>
-                            <a>Basque Country</a>
+                            <a className={navbarClass}>Basque Country</a>
                         </li>
                         <li>
                             <a
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => handleChangePage("experiences")}
+                                className={navbarClass}
                             >
                                 Experiencies
                             </a>
@@ -86,39 +123,61 @@ function NavBar() {
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             >
-                                <div className="experience">
-                                    <a href="">Experience 1:</a>
-                                    <p>France &gt; Navarra</p>
-                                </div>
-                                <div className="experience">
-                                    <a href="">Experience 2:</a>
-                                    <p>
-                                        San Sebastian &gt; St Jean Pied de Port
-                                    </p>
-                                </div>
-                                <div className="experience">
-                                    <a href="">Experience 3:</a>
-                                    <p>Guipuzcoa Tour</p>
-                                </div>
+                                {experiences.map((experience) => (
+                                    <div
+                                        className="experience-in-box"
+                                        key={experience.pack_id}
+                                    >
+                                        <a
+                                            onClick={() =>
+                                                handleChangePage("home")
+                                            }
+                                            className={navbarClass}
+                                        >
+                                            {experience.name}
+                                        </a>
+                                        <p>{experience.duration} days</p>
+                                    </div>
+                                ))}
                             </div>
                         </li>
                         <li>
-                            <a onClick={() => handleChangePage("stories")}>Stories</a>
+                            <a
+                                onClick={() => handleChangePage("stories")}
+                                className={navbarClass}
+                            >
+                                Stories
+                            </a>
                         </li>
                         <li>
-                            <a onClick={() => handleChangePage("contact")}>Contact</a>
+                            <a
+                                onClick={() => handleChangePage("contact")}
+                                className={navbarClass}
+                            >
+                                Contact
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div className="right-bar">
                     <ul>
                         <li>
-                            <a onClick={() => handleChangePage("clientProfile")}>
+                            <a
+                                onClick={() =>
+                                    handleChangePage("clientProfile")
+                                }
+                                className={navbarClass}
+                            >
                                 <PersonOutlineOutlinedIcon />
                             </a>
                         </li>
                         <li>
-                            <a onClick={() => handleChangePage("favoritesPage")}>
+                            <a
+                                onClick={() =>
+                                    handleChangePage("favoritesPage")
+                                }
+                                className={navbarClass}
+                            >
                                 <FavoriteBorderOutlinedIcon />
                             </a>
                         </li>
