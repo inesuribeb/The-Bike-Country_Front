@@ -4,7 +4,7 @@ function Home() {
     return (
         <>
             <header>
-                <NavBar></NavBar>
+                <NavBar changeBackgroundColor={true}></NavBar>
             </header>
             <main>
                 <Sections></Sections>

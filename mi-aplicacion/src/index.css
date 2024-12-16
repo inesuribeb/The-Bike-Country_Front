@@ -11,8 +11,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --color-1: rgb(255, 255, 0);
-  --color-2: #ffffff;
-  --color-3: #000000;
+  --color-2: rgb(255, 255, 255);
+  --color-3: rgb(0, 0, 0);
+  --color-4: rgb(33, 33, 33);
   --color-navBar: black;
   --font-color-navBar: white;
   --font-color-navBar-hover: #FED920;

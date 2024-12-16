@@ -21,6 +21,7 @@
     align-items: center;
     z-index: 1000;
     backdrop-filter: blur(4px);
+    border-radius: 0px;
 }
 
 .modal-content {
@@ -139,8 +140,33 @@
     color: #b91c1c;
     padding: 12px;
     margin-bottom: 12px;
-    border-radius: 8px;
+    border-radius:0px;
     text-align: center;
     background-color: #fef2f2;
     border: 1px solid #fecaca;
 }
+
+
+
+/* @media screen and (max-width: 480px) {
+    .modal-content {
+        width: 85%;
+        padding: 20px;
+    }
+
+    .modal-close {
+        left: 85%;
+        font-size: 18px; 
+    }
+
+    .modal-title {
+        font-size: 1.3rem; 
+    }
+
+    .form-select,
+    .form-input,
+    .form-textarea,
+    .form-submit {
+        font-size: 0.85rem; 
+    }
+} */
