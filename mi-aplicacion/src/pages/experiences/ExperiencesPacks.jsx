@@ -1,4 +1,5 @@
 import ExperienceCard from './ExperienceCard';
+import FavoriteButton from '../../components/button/FavoriteButton';
 import "./ExperiencesPacks.css"
 import './InfoHeader.css';
 import { useState, useEffect } from 'react';
@@ -15,6 +16,26 @@ function ExperiencesPacks() {
     const [experiences, setExperiences] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [favorites, setFavorites] = useState([]);
+
+    const handleFavoriteToggle = (experience, isFavorite) => {
+        let updatedFavorites;
+
+        if (!isFavorite) {
+            updatedFavorites = [...favorites, experience]; // Agregar el objeto de reserva
+        } else {
+            updatedFavorites = favorites.filter((fav) => fav.pack_id !== experience.pack_id); // Filtrar por ID
+        }
+
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorite-experiences", JSON.stringify(updatedFavorites)); // Guardar en localStorage
+    };
+
+    useEffect(() => {
+        const savedFavorites = JSON.parse(localStorage.getItem('favorite-experiences')) || [];
+        setFavorites(savedFavorites);
+    }, []);
+
 
     const handleReserve = async (reservationData) => {
         try {
@@ -92,7 +113,12 @@ function ExperiencesPacks() {
                         days={experience.duration}
                         experience={experience}
                         onReserve={handleReserve}
-                    />
+                    >
+                        <FavoriteButton
+                            isFavorite={favorites.some((fav) => fav.pack_id === experience.pack_id)}
+                            onFavoriteToggle={(isFavorite) => handleFavoriteToggle(experience, isFavorite)}
+                        />
+                    </ExperienceCard>
                 ))}
             </div>
         </>

@@ -1,18 +1,54 @@
-h2{
-    margin:0;
+.favorites-page{
+    margin-top: 210px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: calc(100vh - 64px);
+    margin-top: 210px;
+    box-sizing: border-box;
 }
-.my-favorites {
+
+.my-favorites{
     width: 100%;
-    margin-top:50px;
     margin-bottom: 0.5rem;
     box-sizing: border-box;
-    padding-left: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid black;
-}
-.my-favorites-tittle{
+    margin: 0;
 
+  
+}
+.my-favorites-title {
+    margin: 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding-left: 16px;
+    letter-spacing: 1.5px;
+    box-sizing: border-box;
+  
+}
+
+.favorite-btn.active{
+    padding-right:0;
+    padding-left:16px;
+}
+.favorites-container{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.favorites-booking-container {
+    width: 50%;
+    margin: 0;
+    padding-top: 0;
+
+}
+
+.favorites-experiences-container {
+    width: 50%;
+    margin:0;
+}
+
+.my-favorites-tittle{
     padding: 0.5rem 0;
     width: 100%;
     padding-left: 16px;
@@ -20,14 +56,17 @@ h2{
     box-sizing: border-box;
 }
 
-.favorites-container{
-   margin-left: 20px;
-   margin-top:40px;
-}
 
-.favorites-container div {
+.favorites-booking-container div {
     padding-bottom: 10px; 
     margin-bottom: 20px; 
     border-bottom: 1px dotted #ccc; 
 
+}
+
+
+p {
+    font-size: 1rem;
+    color: #555;
+    padding-left: 16px;
 }

@@ -15,26 +15,20 @@ function Bookings() {
     const handleFavoriteToggle = (booking, isFavorite) => {
         let updatedFavorites;
 
-        if (isFavorite) {
+        if (!isFavorite) {
             updatedFavorites = [...favorites, booking]; // Agregar el objeto de reserva
         } else {
             updatedFavorites = favorites.filter((fav) => fav.id !== booking.id); // Filtrar por ID
         }
 
         setFavorites(updatedFavorites);
-        localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Guardar en localStorage
+        localStorage.setItem("favorite-bookings", JSON.stringify(updatedFavorites)); // Guardar en localStorage
     };
 
     useEffect(() => {
-        const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const savedFavorites = JSON.parse(localStorage.getItem('favorite-bookings')) || [];
         setFavorites(savedFavorites);
     }, []);
-
-    // Guardar favoritos en localStorage cada vez que cambien
-    useEffect(() => {
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-    }, [favorites]);
-
 
 
     const handleCancelBooking = async (booking) => {

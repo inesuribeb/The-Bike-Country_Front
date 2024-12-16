@@ -13,7 +13,7 @@ function SingleExperience() {
                 <NavBar></NavBar>
             </header>
             <main className="experience-main">
-                <div className="carousel-section">
+                <div className="carousel-section-2">
                     {/* Aquí iría tu componente Carousel */}
                 </div>
                 <div className="details-section">

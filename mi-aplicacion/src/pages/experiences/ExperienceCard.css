@@ -14,6 +14,24 @@
     margin: 0 auto; 
     align-items: center; 
     justify-content: center;
+    position: relative;
+}
+
+.experience-card .favorite-btn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+    z-index: 1;
+}
+
+.experience-card .favorite-btn.active {
+    color: #FEFF00;
 }
 
 .experience-card__image-container {
