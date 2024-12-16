@@ -132,13 +132,14 @@ function NavBar({ changeBackgroundColor = false }) {
                                     >
                                         <a
                                             onClick={() =>
-                                                handleChangePage("home")
+                                                handleChangePage(
+                                                    "singleExperience"
+                                                )
                                             }
                                             className={navbarClass}
                                         >
                                             {experience.name}
                                         </a>
-                                        <p>{experience.duration} days</p>
                                     </div>
                                 ))}
                             </div>
