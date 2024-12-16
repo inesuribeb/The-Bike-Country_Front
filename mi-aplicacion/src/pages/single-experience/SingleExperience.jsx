@@ -1,22 +1,19 @@
-import ImageCarousel from './ImageCarousel';
+// import ImageCarousel from './ImageCarousel';
+import React from 'react';
 import DayDetails from './DayDetails';
 
-function SingleExperience({ experienceTitle, experienceImages }) {
+function SingleExperience() {
     
     return (
-        <div>
-            <div>
-                <ImageCarousel images = {experienceImages} />
-                
-            <div>
-                <h1>{experienceTitle}</h1>
-                <button>Book now</button>
-                    
-                <DayDetails />
-            </div>
-            </div>
+        <div className="experience-page">
+          <div className="carousel-section">
+            {/* Aquí iría tu componente Carousel */}
+          </div>
+          <div className="details-section">
+            <DayDetails />
+          </div>
         </div>
-    );
+      );
 }
 
 export default SingleExperience;

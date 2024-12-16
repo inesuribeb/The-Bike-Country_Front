@@ -1,0 +1,25 @@
+.experience-page {
+    display: flex;
+    gap: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .carousel-section {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .details-section {
+    flex: 1;
+    min-width: 0;
+    background-color: #fdf2f2;
+    padding: 2rem;
+  }
+  
+  @media (max-width: 1024px) {
+    .experience-page {
+      flex-direction: column;
+    }
+  }
