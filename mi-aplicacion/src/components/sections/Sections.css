@@ -200,6 +200,10 @@
     object-fit: cover;
 }
 
+.experience #lumbalgia {
+    object-position: 30% center;
+}
+
 .more-experience-section .button-container {
     display: flex;
     justify-content: start;
