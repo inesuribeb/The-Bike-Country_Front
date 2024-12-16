@@ -1,6 +1,5 @@
-
 .contact-details-container {
-margin:20px
+    margin: 20px
 }
 
 
@@ -10,11 +9,16 @@ margin:20px
 }
 
 
-h1{
-    margin: 0px;
+h1 {
+    border-top: 0.8px solid black;;
+    margin-top: 150px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    letter-spacing: 1.5px;
 }
 
 .contact-details-title {
+    margin-top: 20px;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 30px;
@@ -29,7 +33,7 @@ h1{
 }
 
 .contact-details-item {
-   
+
     padding-bottom: 15px;
 }
 
@@ -37,17 +41,20 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  width: 100%;
+    width: 100%;
 }
+
 .contact-details-item__text {
     font-size: 16px;
     margin: 0;
-    flex-grow: 1; /* El texto ocupa todo el espacio disponible */
-    line-height: 1.5; /* Asegura que se vea ordenado */
+    flex-grow: 1;
+    /* El texto ocupa todo el espacio disponible */
+    line-height: 1.5;
+    /* Asegura que se vea ordenado */
 }
 
 .contact-details-item__description {
-    flex-basis: 100%; 
+    flex-basis: 100%;
     padding: 10px 0;
     font-size: 14px;
     color: #666;
@@ -70,7 +77,8 @@ h1{
 }
 
 .dropdown-contact {
-    margin-left: 10px; /* Ajusta el margen del botón */
+    margin-left: 10px;
+    /* Ajusta el margen del botón */
     display: flex;
     align-items: center;
 }

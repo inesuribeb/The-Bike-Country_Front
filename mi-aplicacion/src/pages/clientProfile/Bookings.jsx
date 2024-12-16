@@ -2,13 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { getMyBookings } from '../../utils/js/apiCallController';
 import './Bookings.css';
 import { cancelBooking } from '../../utils/js/apiCallController';
-
+import FavoriteButton from "../../components/button/FavoriteButton";
 
 
 function Bookings() {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [favorites, setFavorites] = useState([]);
+
+
+    const handleFavoriteToggle = (booking, isFavorite) => {
+        let updatedFavorites;
+
+        if (isFavorite) {
+            updatedFavorites = [...favorites, booking]; // Agregar el objeto de reserva
+        } else {
+            updatedFavorites = favorites.filter((fav) => fav.id !== booking.id); // Filtrar por ID
+        }
+
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Guardar en localStorage
+    };
+
+    useEffect(() => {
+        const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        setFavorites(savedFavorites);
+    }, []);
+
+    // Guardar favoritos en localStorage cada vez que cambien
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }, [favorites]);
+
+
 
     const handleCancelBooking = async (booking) => {
         try {
@@ -41,6 +68,8 @@ function Bookings() {
     if (error) return <div>{error}</div>;
     if (!bookings.length) return <div>No bookings yet.</div>;
 
+
+
     return (
         <div className="bookings-content">
             <div className="bookings-header">
@@ -53,6 +82,11 @@ function Bookings() {
                         <h5>Orders</h5>
                         <p>Ref: {booking.id}</p>
                         <p>on {booking.application_date}</p>
+                        <FavoriteButton
+                            bookingId={booking.id}
+                            isFavorite={favorites.some((fav) => fav.id === booking.id)} // Compara objetos
+                            onFavoriteToggle={(isFavorite) => handleFavoriteToggle(booking, isFavorite)}
+                        />
                     </div>
                     <div className='orderDetails'>
                         <h5>Details</h5>

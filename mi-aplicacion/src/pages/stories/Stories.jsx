@@ -1,7 +1,7 @@
 import "./Stories.css";
 import NavBar from "../../components/navbar/NavBar";
 import Intro from '../../components/sections/Intro';
-import FormStories from "./FormStories";
+//import FormStories from "./FormStories";
 import BlogStories from './BlogStories';
 
 function Stories() {
