@@ -51,7 +51,7 @@ const FavoritesPage = () => {
                 </div>
                 <div className= "favorites-container">
                     <div className="favorites-booking-container">
-                        <h2 className="my-favorites-title"> My Favorite Bookings</h2>
+                        <h2 className="my-favorites-booking"> My Favorite Bookings</h2>
                         {favorites.bookings.length === 0 ? (
                             <p>No favorites bookings yet.</p>
                         ) : (
@@ -70,7 +70,7 @@ const FavoritesPage = () => {
                         )}
                     </div>
                     <div className="favorites-experiences-container">
-                        <h2 className="my-favorites-title"> My Favorite Experiences</h2>
+                        <h2 className="my-favorites-experiences"> My Favorite Experiences</h2>
                         {favorites.experiences.length === 0 ? (
                             <p>No favorites experiences yet.</p>
                         ) : (

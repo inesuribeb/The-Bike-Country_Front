@@ -26,7 +26,14 @@
   
 }
 
-.favorite-btn.active{
+.my-favorites-booking, .my-favorites-experiences {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+}
+
+.favorites-page .favorite-btn.active{
     padding-right:0;
     padding-left:16px;
 }
@@ -34,22 +41,31 @@
     margin: 0;
     display: flex;
     justify-content: space-between;
+    height: 100vh;
+
   }
+
+.favorites-booking-container h2 , .favorites-experiences-container h2{
+    margin-left: 16px;
+}
 
 .favorites-booking-container {
     width: 50%;
     margin: 0;
-    padding-top: 0;
+    border-right: 1px solid black; 
+    height: 100vh;
 
 }
 
 .favorites-experiences-container {
     width: 50%;
     margin:0;
+    height: 100vh;
+
 }
 
 .my-favorites-tittle{
-    padding: 0.5rem 0;
+   
     width: 100%;
     padding-left: 16px;
     letter-spacing: 1.5px;
@@ -65,7 +81,13 @@
 }
 
 
-p {
+.favorites-experiences-container div {
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+    border-bottom: 1px dotted #ccc; 
+
+}
+.favorites-container p {
     font-size: 1rem;
     color: #555;
     padding-left: 16px;
