@@ -20,7 +20,10 @@ header {
 .carousel-section-2 {
     width: 50%;
     height: 100%;
-    background-color: gray;
+    background-image: url("https://cdn.sanity.io/images/k15yl91v/production/1c048ebbf1753b5f417c35c347146d264e445179-2500x1667.jpg?w=2560&q=75&fit=max&auto=format");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .details-section {

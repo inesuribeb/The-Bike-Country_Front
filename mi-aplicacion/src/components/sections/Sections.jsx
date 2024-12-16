@@ -21,7 +21,7 @@ function Sections() {
                 title={"THE BIKE COUNTRY"}
                 content={"Premium bike experiences for those most demanding"}
                 imageUrl={
-                    "https://content.rapha.cc/_next/image?url=https%3A%2F%2Fmedia.rapha.cc%2Fimage%2Fupload%2Fw_1600%2Cf_auto%2Cq_auto%2Cc_fill%2Car_16%3A9%2Cdpr_2.0%2Cr_0%2Ff_auto%2Fq_auto%3Abest%2Fv1728914199%2Flocation%2Fh224_location_PRO-TEAM-newzealand_04.jpg&w=3840&q=100"
+                    "https://cdn.sanity.io/images/k15yl91v/production/a438b83a94b88ee28bc8ee201a5370195317a87e-1920x1080.jpg?w=2560&q=75&fit=max&auto=format"
                 }
             ></Intro>
             <MoreAboutUs></MoreAboutUs>
