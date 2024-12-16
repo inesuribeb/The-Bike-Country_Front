@@ -10,7 +10,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color-1: rgb(255, 255, 84);
+  --color-1: rgb(255, 255, 0);
   --color-2: #ffffff;
   --color-3: #000000;
   --color-navBar: black;
@@ -39,17 +39,4 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
