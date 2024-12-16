@@ -6,23 +6,23 @@
 
   .posts {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    grid-template-columns: repeat(3, 1fr); /* 4 columnas iguales */
     gap: 20px; /* Espaciado entre tarjetas */
     margin: 20px; /* Espaciado general */
   }
  
   
 .card {
-    background-color: #fff; /* Color de fondo */
-    border: 1px solid #ddd; /* Borde ligero */
+    background-color: yellow; /* Color de fondo */
+    /* border: 1px solid #ddd;  */
 
     overflow: hidden; /* Evita que elementos internos se salgan */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
   
-  .card:hover {
-    transform: scale(1.05); /* Agranda la tarjeta al pasar el mouse */
-  }
+  /* .card:hover {
+    transform: scale(1.05); 
+  } */
   
   /* Contenedor de las imágenes */
   .card img {
@@ -41,6 +41,8 @@
     margin-bottom: 8px;
     margin-left: 0;
     margin-top: 0;
+    color: black;
+
   }
   
   .card-description {
