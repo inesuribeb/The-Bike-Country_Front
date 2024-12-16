@@ -17,7 +17,7 @@ function Sections() {
     return (
         <>
             <Intro
-                title={"The Bike Country"}
+                title={"THE BIKE COUNTRY"}
                 content={"Premium bike experiences for those most demanding"}
                 imageUrl={"https://i.ibb.co/HzQLK2V/pruebafondo.png"}
             ></Intro>
