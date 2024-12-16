@@ -17,12 +17,12 @@
 
 @media (max-width: 1024px) {
     .experiences-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+      grid-template-columns: repeat(2, 1fr); 
     }
   }
   
   @media (max-width: 768px) {
     .experiences-container {
-      grid-template-columns: 1fr; /* 1 columna en móviles */
+      grid-template-columns: 1fr; 
     }
   }

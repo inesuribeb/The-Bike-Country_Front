@@ -14,7 +14,7 @@ function Experiences() {
             <Intro
                 title={"Experiences"}
                 content={""}
-                imageUrl={"https://i.ibb.co/ZBFGSVd/back.png"}>
+                imageUrl={"https://enoughcycling.cc/wp-content/uploads/2022/04/ENOUGH-THETRAKA-DAY2-CHIARA-REDASCHI-43-scaled.jpg"}>
             </Intro>
             <main>
                 <ExperiencesPacks></ExperiencesPacks>

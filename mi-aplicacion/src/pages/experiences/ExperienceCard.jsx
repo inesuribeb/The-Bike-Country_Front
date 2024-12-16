@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ReservationModal from "./ReservationModal";
+import { PageContext } from '../../utils/js/context/PageContext';
 import "./ExperienceCard.css"
 
 function ExperienceCard({ title, days, imageUrl, experience, onReserve, children }) {
     const [isModalOpen, setModalOpen] = useState(false);
     const userId = localStorage.getItem("authUserId"); 
+    const { setPage } = useContext(PageContext);
 
     const handleOpenModal = () => {
         if (!userId) {
@@ -16,13 +18,27 @@ function ExperienceCard({ title, days, imageUrl, experience, onReserve, children
 
     const handleCloseModal = () => setModalOpen(false);
 
+    const handleViewExperience = () => {
+        setPage('singleExperience');
+    };
+
     return (
         <div className="experience-card">
-            <div className="experience-card__image-container">
+            <div 
+                className="experience-card__image-container"
+                onClick={handleViewExperience}
+                style={{ cursor: 'pointer' }}
+            >
                 <img src={imageUrl} alt={title} className="experience-card__image" />
             </div>
             <div className="experience-card__info">
-                <h5 className="experience-card__title">{title}</h5>
+                <h5 
+                    className="experience-card__title"
+                    onClick={handleViewExperience}
+                    style={{ cursor: 'pointer' }}
+                >
+                    {title}
+                </h5>
                 {children}
                 <p className="experience-card__days">{days} days</p>
             </div>

@@ -17,8 +17,9 @@ function Stories() {
                 className={"special-section"}
                 withFilter = {true}>
             </Intro>
-            <main>
-                <h2 className="stories-title">Share Your Experience With Us</h2>
+            <main className="stories-container">
+                <h5 className="top-div">· The Bike Country</h5>
+                <h2 className="stories-title">STORIES</h2>
                 <BlogStories></BlogStories>
               
             </main>
