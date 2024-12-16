@@ -23,7 +23,7 @@ function MoreAboutUs() {
                 </div>
                 <div id="second-div">
                     <img
-                        src="https://images.pexels.com/photos/17239255/pexels-photo-17239255/free-photo-of-hombre-mujer-deporte-sonriente.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="https://cdn.sanity.io/images/k15yl91v/production/e5f2c3dfe0ee59e1293bfcb2de12ed753841a06f-1024x1024.jpg?w=1440&q=75&fit=max&auto=format"
                         alt=""
                     />
                 </div>
