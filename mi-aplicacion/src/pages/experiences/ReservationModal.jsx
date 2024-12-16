@@ -93,7 +93,7 @@ const ReservationModal = ({ isOpen, onClose, experience, onSubmit, userId }) => 
                         </label>
 
                         <label className="form-label">
-                            Message:
+                            Message
                             <textarea
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
@@ -102,11 +102,11 @@ const ReservationModal = ({ isOpen, onClose, experience, onSubmit, userId }) => 
                         </label>
 
                         <label className="form-label">
-                            Requested Dates:
+                            Requested Dates
                             <input
                                 type="text"
                                 name="requested_dates"
-                                placeholder="2024-12-20,2024-12-25"
+                                placeholder="2024-12-20"
                                 required
                                 className="form-input"
                             />

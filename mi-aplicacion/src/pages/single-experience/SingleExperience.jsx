@@ -1,20 +1,25 @@
-import ImageCarousel from './ImageCarousel';
+// import ImageCarousel from './ImageCarousel';
+import React from 'react';
 import DayDetails from './DayDetails';
+import NavBar from '../../components/navbar/NavBar'
+import './SingleExperience.css'
 
-function SingleExperience({ experienceTitle, experienceImages }) {
-    
+
+function SingleExperience() {
+
     return (
-        <div>
-            <div>
-                <ImageCarousel images = {experienceImages} />
-                
-            <div>
-                <h1>{experienceTitle}</h1>
-                <button>Book now</button>
-                    
-                <DayDetails />
-            </div>
-            </div>
+        <div className="experience-page">
+            <header>
+                <NavBar></NavBar>
+            </header>
+            <main className="experience-main">
+                <div className="carousel-section-2">
+                    {/* Aquí iría tu componente Carousel */}
+                </div>
+                <div className="details-section">
+                    <DayDetails />
+                </div>
+            </main>
         </div>
     );
 }
