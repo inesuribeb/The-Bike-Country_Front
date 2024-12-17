@@ -1,6 +1,7 @@
 import Button from "../button/Button";
 import { PageContext } from "../../utils/js/context/PageContext.js";
 import { useContext } from "react";
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 function HomeFooter() {
     const { setPage } = useContext(PageContext);
     const handleChangePage = (pageName) => {
@@ -17,7 +18,10 @@ function HomeFooter() {
                             handleChangePage("clientProfile");
                         }}
                         children={"CREATE ACOUNT --->"}
-                    ></Button>
+                    >
+                        CREATE ACOUNT
+                        <TrendingFlatIcon />
+                    </Button>
                 </div>
                 <div className="how-help">
                     <h3 id="how-can">HOW CAN</h3>
@@ -27,7 +31,10 @@ function HomeFooter() {
                             handleChangePage("contact");
                         }}
                         children={"CONTACT US --->"}
-                    ></Button>
+                    >
+                        CONTACT US
+                        <TrendingFlatIcon />
+                    </Button>
                 </div>
             </div>
             <div className="join-us">

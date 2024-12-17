@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Button from "../button/Button";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
-
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 function CarruselBQ({ images }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const length = images.length;
@@ -34,7 +34,10 @@ function CarruselBQ({ images }) {
                         children={
                             "SEE THE BEAUTY AND MAGIC OF THE BASQUE COUNTRY --->"
                         }
-                    ></Button>
+                    >
+                        SEE THE BEAUTY AND MAGIC OF THE BASQUE COUNTRY
+                        <TrendingFlatIcon />
+                    </Button>
                 </div>
                 <div id="second-div">
                     <div className="carousel-container">

@@ -1,4 +1,5 @@
 import Button from "../button/Button";
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 function MoreAboutUs() {
     return (
         <div className="more-about-us-section">
@@ -19,7 +20,10 @@ function MoreAboutUs() {
                     <Button
                         onClick={() => {}}
                         children={"Know more about us --->"}
-                    ></Button>
+                    >
+                        Know more about us
+                        <TrendingFlatIcon />
+                    </Button>
                 </div>
                 <div id="second-div">
                     <img
