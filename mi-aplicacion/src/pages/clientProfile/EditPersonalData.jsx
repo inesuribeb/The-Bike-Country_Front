@@ -144,7 +144,7 @@ function EditPersonalData({ client, onSuccess, onCancel }) {
                 />
             </div>
 
-            <div className="form-buttons">
+            <div className="profile-form-buttons">
                 <button type="submit">Save Changes</button>
                 <button type="button" onClick={onCancel}>Cancel</button>
             </div>

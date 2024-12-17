@@ -53,10 +53,10 @@ const FavoritesPage = () => {
                     <div className="favorites-booking-container">
                         <h2 className="my-favorites-booking"> My Favorite Bookings</h2>
                         {favorites.bookings.length === 0 ? (
-                            <p>No favorites bookings yet.</p>
+                            <p className="no-bookings">No favorites bookings yet.</p>
                         ) : (
                             favorites.bookings.map((booking) => (
-                                <div key={booking.id}>
+                                <div className="booking-favs" key={booking.id}>
                                     <h2>{booking.pack.name}</h2>
                                     <FavoriteButton
                                         isFavorite={favorites.bookings.some(fav => fav.id === booking.id)}
@@ -68,14 +68,15 @@ const FavoritesPage = () => {
                             ))
                     
                         )}
+                      
                     </div>
                     <div className="favorites-experiences-container">
                         <h2 className="my-favorites-experiences"> My Favorite Experiences</h2>
                         {favorites.experiences.length === 0 ? (
-                            <p>No favorites experiences yet.</p>
+                            <p className="no-experiences">No favorites experiences yet.</p>
                         ) : (
                             favorites.experiences.map((experience) => (
-                                <div key={experience.pack_id}>
+                                <div className="experiences-favs" key={experience.pack_id}>
                                     <h2>{experience.name}</h2>
                                     <FavoriteButton
                                         isFavorite={favorites.experiences.some(fav => fav.pack_id === experience.pack_id)}

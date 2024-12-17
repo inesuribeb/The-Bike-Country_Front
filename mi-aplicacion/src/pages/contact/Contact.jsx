@@ -22,7 +22,7 @@ function Contact() {
             <header>
                 <NavBar></NavBar>
             </header>
-            <main>
+            <main ClassName ="background-contact">
                 <div>
                     <h1 className="contact-title">CONTACT US</h1>
                     <div className="contact-container">

@@ -1,3 +1,4 @@
+
 .edit-form {
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +11,7 @@
 
 .edit-form label {
     display: block;
-    color: #666;
+    color: #cac3c3;
     margin-bottom: 0.5rem;
 }
 
@@ -25,7 +26,7 @@
 }
 
 .edit-form input:focus {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ffffff;
 }
 
 .error-message {
@@ -33,27 +34,29 @@
     margin-bottom: 1rem;
 }
 
-.form-buttons {
+.profile-form-buttons {
     margin-top: 3rem;
     display: flex;
     gap: 1rem;
+   
 }
 
-.form-buttons button {
+.edit-form input {
+    color: #fff;
+}
+
+.profile-form-buttons button {
     padding: 0.5rem 2rem;
-    border: 1px solid #000;
-    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background:transparent;
     cursor: pointer;
     transition: all 0.2s ease;
+    color: #fff;
 }
 
-.form-buttons button:hover {
+.profile-form-buttons button:hover {
     background: #000;
     color: white;
-}
-
-.form-buttons button[type="button"] {
-    border-color: #666;
 }
 
 .edit-clientProfile-country input {
@@ -64,19 +67,19 @@
     outline: none;
     font-size: 1rem;
     background: transparent;
-    color: #000;
+    color: #fff;
 }
 
 .edit-clientProfile-country input:focus {
-    border-bottom: 1px solid #000;
-    color: black
+    border-bottom: 1px solid #ffffff;
+    color: #fff;
 }
 
 .edit-clientProfile-country ul {
     border: 1px solid #eee;
     border-radius: 4px;
     margin-top: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .edit-clientProfile-country li {
