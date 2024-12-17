@@ -250,8 +250,8 @@ function ContactForm({ initialClient, onSubmit }) {
 
             {/* Aquí va el modal */}
             {showModal && (
-                <div className="modal">
-                    <div className="modal-content">
+                <div className="contact-modal">
+                    <div className="contact-modal-content">
                         <h2>Formulario enviado correctamente</h2>
                         <p>¡Gracias por contactarnos! Nos comunicaremos contigo pronto.</p>
                         <button onClick={() => setShowModal(false)}>Cerrar</button>

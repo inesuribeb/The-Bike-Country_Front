@@ -8,7 +8,7 @@
 }
 
 .favorite-btn.active {
-    color: red;
+    color: rgb(255, 255, 0);
   
 }
   .favorite-btn .w-5 {

@@ -68,6 +68,7 @@ const FavoritesPage = () => {
                             ))
                     
                         )}
+                      
                     </div>
                     <div className="favorites-experiences-container">
                         <h2 className="my-favorites-experiences"> My Favorite Experiences</h2>

@@ -3,7 +3,7 @@
 }
 
 .contact-details-section {
-    border-top: 0.8px solid black;
+    border-top: 0.8px solid rgb(255, 255, 255);
     margin: 20px;
 }
 
@@ -16,13 +16,13 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #4d8d5f;
+    color:  rgb(255, 255, 0);
     margin-left: 0;
 }
 
 .contact-title-h1 {
-    border-top: 0.8px solid black;
-    border-bottom: 0.8px solid black;
+    border-top: 0.8px solid #fff;
+    border-bottom: 0.8px solid #fff;
     letter-spacing: 1.5px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -79,6 +79,13 @@
     }
 }
 
+.contact-details-container p{
+    color:#dfdddd
+}
+
+.contact-details-container .dropdown-header{
+    font-weight: bold;
+}
 .dropdown-contact {
     margin-left: 10px;
     /* Ajusta el margen del botón */
