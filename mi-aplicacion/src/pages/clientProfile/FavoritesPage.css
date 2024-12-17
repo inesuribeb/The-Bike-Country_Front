@@ -32,9 +32,15 @@
     color: rgb(255, 255, 0);
 }
 
+.no-experiences, .no-bookings {
+    padding-left: 50px;;
+}
+
+
+
 .favorites-page .favorite-btn.active{
     padding-right:0;
-    padding-left: 50px;
+    width: 50px;;
 }
 .favorites-container{
     display: flex;
@@ -43,7 +49,9 @@
 
   }
 
-
+.experiences-favs, .booking-favs{
+    padding-left: 50px;
+}
 
 .favorites-booking-container {
     width: 50%;
@@ -77,6 +85,4 @@
 .favorites-container p {
     font-size: 1rem;
     color: #dfdddd;
-    padding-left: 50px;
 }
-

@@ -114,7 +114,6 @@ required {
 .contact-modal-content {
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color:black;
@@ -131,7 +130,6 @@ required {
   background-color:  #FEFF00; 
   color: black;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -139,3 +137,4 @@ required {
   background-color:  #000000; 
   color: #fff;
 }
+

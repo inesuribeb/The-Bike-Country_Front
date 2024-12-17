@@ -20,9 +20,9 @@
   .internal-nav button {
     width: 100%;
     text-align: left;
-    padding: 1rem;
+    padding-left: 50px;
     background: transparent;
-    color: #666;
+    color: #b9b8b8;
     border: none;
     transition: color 0.3s ease;
     outline: none; 
@@ -34,5 +34,5 @@
   }
   
   .internal-nav button:hover {
-    color: #666;
+    color: rgb(255, 255, 0);
   }
