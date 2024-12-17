@@ -113,3 +113,7 @@ Si tienes ideas para mejorar este proyecto, abre un **issue** o envía un **pull
 ---
 
 ## ✨ **Desarrollado con pasión por el ciclismo y la tecnología** 🚴‍♀️✨
+
+[![GitHub](https://img.shields.io/badge/GitHub-@inesuribeb-blue?style=flat-square&logo=github)](https://github.com/inesuribeb)
+[![GitHub](https://img.shields.io/badge/GitHub-@gestefania2-blue?style=flat-square&logo=github)](https://github.com/gestefania2)
+[![GitHub](https://img.shields.io/badge/GitHub-@YerBrown-blue?style=flat-square&logo=github)](https://github.com/YerBrown)
